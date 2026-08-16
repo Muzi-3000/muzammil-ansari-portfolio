@@ -172,6 +172,11 @@ button { color: inherit; font: inherit; }
 .work-project-visual { position: relative; isolation: isolate; aspect-ratio: 16 / 10; overflow: hidden; padding: clamp(1rem, 2vw, 2rem); color: var(--ink); background: var(--paper); border: 1px solid var(--paper); }
 .work-project-visual--image { padding: 0; }
 .work-project-visual--image img { width: 100%; height: 100%; display: block; object-fit: contain; }
+.work-project-card__visual-link { position: relative; display: block; overflow: hidden; }
+.work-project-card__visual-link > span { position: absolute; right: 1rem; bottom: 1rem; z-index: 3; padding: .7rem .85rem; color: var(--paper); background: var(--ink); border: 1px solid var(--paper); font: .58rem var(--font-text); text-transform: lowercase; transition: color .45s var(--ease), background .45s var(--ease); }
+.work-project-card__visual-link img { transition: transform .8s var(--ease); }
+.work-project-card__visual-link:hover > span, .work-project-card__visual-link:focus-visible > span { color: var(--ink); background: var(--paper); }
+.work-project-card__visual-link:hover img, .work-project-card__visual-link:focus-visible img { transform: scale(1.025); }
 .work-project-visual > span { position: relative; z-index: 2; font: .58rem var(--font-text); }
 .work-project-visual > b { position: absolute; z-index: 2; left: 5%; bottom: 4%; padding-block: .1em .18em; font: 700 clamp(5rem, 10vw, 11rem)/.74 var(--font-display); letter-spacing: -.05em; }
 .work-project-visual > i { position: absolute; z-index: 2; top: 4%; right: 5%; font: 300 clamp(3rem, 6vw, 6.5rem)/1 var(--font-display); }
@@ -412,6 +417,7 @@ button { color: inherit; font: inherit; }
   .work-category > strong { max-width: calc(100% - 3rem); font-size: clamp(2.35rem, 11vw, 4rem); }
   .work-category__archive-inner { padding-inline: 1rem; }
   .work-project-controls > span { max-width: 18ch; line-height: 1.4; }
+  .work-project-card__visual-link > span { right: .65rem; bottom: .65rem; }
   .work-project-card { flex-basis: 100%; }
   .work-project-grid.has-one .work-project-card { flex-basis: 100%; }
   .work-project-visual > b { font-size: clamp(5rem, 24vw, 8rem); }

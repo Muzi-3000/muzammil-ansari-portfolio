@@ -10,6 +10,8 @@ type Project = {
   action: string;
   thumbnail?: string;
   thumbnailAlt?: string;
+  href?: string;
+  status?: string;
 };
 
 const categories: ReadonlyArray<{
@@ -34,6 +36,8 @@ const categories: ReadonlyArray<{
         action: 'figma preview to be added',
         thumbnail: '/images/projects/twpayz-website-v2.webp',
         thumbnailAlt: 'TWPAYZ website design shown on a desktop monitor',
+        href: '/work/twpayz-website',
+        status: 'website design concept',
       },
       {
         title: 'My Swanand Pathology',
@@ -186,16 +190,32 @@ export default function WorkCategories() {
                         {category.projects.length > 0 ? category.projects.map((project) => (
                           <article className="work-project-card" key={project.title}>
                             {project.thumbnail ? (
-                              <div className="work-project-visual work-project-visual--image">
-                                <img
-                                  src={project.thumbnail}
-                                  alt={project.thumbnailAlt ?? `${project.title} project thumbnail`}
-                                  width="2400"
-                                  height="1500"
-                                  loading="lazy"
-                                  decoding="async"
-                                />
-                              </div>
+                              project.href ? (
+                                <a className="work-project-card__visual-link" href={project.href} aria-label={`View ${project.title} case study`}>
+                                  <div className="work-project-visual work-project-visual--image">
+                                    <img
+                                      src={project.thumbnail}
+                                      alt={project.thumbnailAlt ?? `${project.title} project thumbnail`}
+                                      width="2400"
+                                      height="1500"
+                                      loading="lazy"
+                                      decoding="async"
+                                    />
+                                  </div>
+                                  <span>view project ↗</span>
+                                </a>
+                              ) : (
+                                <div className="work-project-visual work-project-visual--image">
+                                  <img
+                                    src={project.thumbnail}
+                                    alt={project.thumbnailAlt ?? `${project.title} project thumbnail`}
+                                    width="2400"
+                                    height="1500"
+                                    loading="lazy"
+                                    decoding="async"
+                                  />
+                                </div>
+                              )
                             ) : (
                               <div className={`work-project-visual work-project-visual--${project.plate}`} aria-hidden="true">
                                 <span>{project.discipline}</span>
@@ -204,10 +224,10 @@ export default function WorkCategories() {
                               </div>
                             )}
                             <div className="work-project-card__meta">
-                              <span>real project</span>
-                              <span>{project.action}</span>
+                              <span>{project.status ?? 'real project'}</span>
+                              <span>{project.href ? 'case study available' : project.action}</span>
                             </div>
-                            <h4>{project.title}</h4>
+                            <h4>{project.href ? <a href={project.href}>{project.title}</a> : project.title}</h4>
                             <p>{project.description}</p>
                           </article>
                         )) : (

@@ -1,0 +1,229 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import InteractionLayer from '../../components/InteractionLayer';
+import '../../styles/project.css';
+
+const prototypeUrl = 'https://www.figma.com/proto/PTXgJDSm0ooB3GpBguXTJF/transact-world?node-id=1186-137&viewport=-2970%2C913%2C0.16&t=oWe2cY17PO76CUDG-1&scaling=min-zoom&content-scaling=fixed&page-id=1%3A2';
+
+const chapters = [
+  {
+    number: '01',
+    title: 'First impression',
+    line: 'A bold promise, calm spacing and a clear action make a complex offer feel immediately understandable.',
+    image: '/images/projects/twpayz/01-home.webp',
+    alt: 'TWPAYZ homepage hero with navigation, payment dashboard and client logos',
+    width: 1440,
+    height: 1360,
+  },
+  {
+    number: '02',
+    title: 'Trust at scale',
+    line: 'Social proof, measurable reach and a strong infrastructure statement turn credibility into part of the visual rhythm.',
+    image: '/images/projects/twpayz/02-trust.webp',
+    alt: 'TWPAYZ testimonial, company statistics and payment infrastructure sections',
+    width: 1440,
+    height: 1420,
+  },
+  {
+    number: '03',
+    title: 'Solutions in context',
+    line: 'Payment services become recognisable objects and familiar tasks instead of abstract technical language.',
+    image: '/images/projects/twpayz/03-payments.webp',
+    alt: 'TWPAYZ payment solution cards and checkout interface concept',
+    width: 1440,
+    height: 1750,
+  },
+  {
+    number: '04',
+    title: 'Built around sectors',
+    line: 'A vertical journey connects very different industries through one adaptable payment ecosystem.',
+    image: '/images/projects/twpayz/04-industries.webp',
+    alt: 'TWPAYZ industry section showing ecommerce, hospitality, retail, sports, travel and food sectors',
+    width: 1440,
+    height: 2500,
+  },
+  {
+    number: '05',
+    title: 'Reach without clutter',
+    line: 'Partnership models and regional coverage are organised as scannable systems, keeping depth easy to navigate.',
+    image: '/images/projects/twpayz/05-coverage.webp',
+    alt: 'TWPAYZ partnership solutions, world coverage and payment portfolio sections',
+    width: 1440,
+    height: 2780,
+  },
+  {
+    number: '06',
+    title: 'Reassurance to action',
+    line: 'FAQs remove friction, the advisor form creates a human next step and the footer closes the journey with clarity.',
+    image: '/images/projects/twpayz/06-conversion.webp',
+    alt: 'TWPAYZ call to action, frequently asked questions, advisor form and footer',
+    width: 1440,
+    height: 2997,
+  },
+] as const;
+---
+
+<BaseLayout
+  title="TWPAYZ Website Concept | Muzammil Ansari"
+  description="A visual case study of the TWPAYZ payment-solutions website concept, designed in Figma by Muzammil Ansari."
+  socialImage="/images/projects/twpayz-website-v2.webp"
+  socialImageWidth={2400}
+  socialImageHeight={1500}
+>
+  <InteractionLayer client:load />
+  <Header />
+
+  <main id="main" class="project-page">
+    <section id="project-top" class="project-hero page-gutter" aria-labelledby="project-title">
+      <div class="project-hero__meta" data-load>
+        <a href="/#work">← back to work</a>
+        <span>01 / UI·UX</span>
+        <a href={prototypeUrl} target="_blank" rel="noopener noreferrer">view prototype ↗</a>
+      </div>
+
+      <h1 id="project-title">
+        <span data-load>TWPAYZ</span>
+        <span data-load>WEBSITE</span>
+      </h1>
+
+      <div class="project-hero__intro" data-reveal>
+        <p>A payment-solutions website concept shaped around a clearer first impression, an easier route into the offer and a lighter digital experience.</p>
+        <p>This project is presented as design work. It was created in Figma and has not been developed or deployed as a live website.</p>
+      </div>
+    </section>
+
+    <section class="project-stage page-gutter" aria-label="TWPAYZ website presentation">
+      <div class="project-stage__label">
+        <span>final direction / desktop</span>
+        <span>concept view 01</span>
+      </div>
+
+      <figure class="project-window" data-reveal>
+        <div class="project-window__bar" aria-hidden="true">
+          <span class="project-window__controls"><i></i><i></i><i></i></span>
+          <span>twpayz / homepage concept</span>
+          <a href={prototypeUrl} target="_blank" rel="noopener noreferrer" aria-label="Open the TWPAYZ interactive Figma prototype in a new tab">figma ↗</a>
+        </div>
+        <div class="project-window__viewport">
+          <img
+            src="/images/projects/twpayz-website-v2.webp"
+            alt="TWPAYZ payment-solutions website concept presented on a desktop monitor"
+            width="2400"
+            height="1500"
+            decoding="async"
+          />
+        </div>
+      </figure>
+
+      <div class="project-stage__caption">
+        <span>designed for clarity</span>
+        <p>The presentation window keeps the work visibly framed as a digital interface while allowing the final visual direction to carry the page.</p>
+      </div>
+    </section>
+
+    <section class="project-brief page-gutter">
+      <div class="project-section-heading" data-reveal>
+        <span>01 / the brief</span>
+        <h2>Make modern payments feel simple from the first click.</h2>
+      </div>
+
+      <div class="project-brief__copy" data-reveal>
+        <p>TWPayz is a fintech platform helping businesses accept and manage online, in-store and mobile payments through one secure system. The brief was to turn that broad financial offer into a minimal, modern website that feels clear, credible and easy to navigate.</p>
+      </div>
+    </section>
+
+    <dl class="project-facts page-gutter" data-reveal>
+      <div><dt>project type</dt><dd>Fintech website</dd></div>
+      <div><dt>role</dt><dd>UI/UX Designer</dd></div>
+      <div><dt>tool</dt><dd>Figma</dd></div>
+    </dl>
+
+    <section class="project-direction page-gutter">
+      <div class="project-direction__title" data-reveal>
+        <span>02 / design direction</span>
+        <h2>Complex service.<br />Clear journey.</h2>
+      </div>
+
+      <div class="project-principles">
+        <article data-reveal>
+          <span>01</span>
+          <h3>Fintech colour system</h3>
+          <p>Cool blues and soft neutrals signal trust, clarity and digital confidence.</p>
+        </article>
+        <article data-reveal>
+          <span>02</span>
+          <h3>Geometric language</h3>
+          <p>Triangles and modular shapes extend the angular logic of the TWPayz logo across the interface.</p>
+        </article>
+        <article data-reveal>
+          <span>03</span>
+          <h3>Effortless navigation</h3>
+          <p>Clean sans-serif typography and a minimal hierarchy keep every journey quick to scan and easy to use.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="project-walkthrough page-gutter" aria-labelledby="walkthrough-title">
+      <div class="project-section-heading" data-reveal>
+        <span>03 / website walkthrough</span>
+        <h2 id="walkthrough-title">The complete idea, one section at a time.</h2>
+      </div>
+
+      <div class="project-chapters">
+        {chapters.map((chapter) => (
+          <article class="project-chapter">
+            <div class="project-chapter__copy" data-reveal>
+              <span>{chapter.number}</span>
+              <h3>{chapter.title}</h3>
+              <p>{chapter.line}</p>
+            </div>
+            <figure class="project-chapter__frame" data-reveal>
+              <img
+                src={chapter.image}
+                alt={chapter.alt}
+                width={chapter.width}
+                height={chapter.height}
+                loading="lazy"
+                decoding="async"
+              />
+              <figcaption><span>section {chapter.number}</span><span>desktop design / figma</span></figcaption>
+            </figure>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <section class="project-status page-gutter">
+      <div data-reveal>
+        <span>04 / concept status</span>
+        <p>Not every strong digital project needs to pretend it is live. This case study presents the thinking, visual direction and intended experience as the finished outcome.</p>
+      </div>
+
+      <div class="project-end-actions" data-reveal>
+        <a class="project-end-action" href={prototypeUrl} target="_blank" rel="noopener noreferrer">
+          <span>
+            <small>interactive / figma</small>
+            <strong>View prototype</strong>
+          </span>
+          <b aria-hidden="true">↗</b>
+        </a>
+        <a class="project-end-action" href="#project-top">
+          <span>
+            <small>navigation</small>
+            <strong>Back to top</strong>
+          </span>
+          <b aria-hidden="true">↑</b>
+        </a>
+      </div>
+
+      <nav class="project-return" aria-label="Project navigation">
+        <a href="/#work">← all projects</a>
+        <a href="/">homepage ↑</a>
+      </nav>
+    </section>
+  </main>
+
+  <Footer />
+</BaseLayout>
