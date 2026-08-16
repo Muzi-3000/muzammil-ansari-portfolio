@@ -1,0 +1,216 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import InteractionLayer from '../../components/InteractionLayer';
+import '../../styles/project.css';
+
+const guidelinesUrl = '/documents/visionspace-brand-identity.pdf';
+
+const chapters = [
+  {
+    number: '01',
+    title: 'Position before promotion',
+    line: 'The identity begins with a clear belief: property should be understood through what a place is becoming, not only what it is today.',
+    images: [
+      { src: '/images/projects/visionspace/02-brand-story.webp', alt: 'VisionSpace brand story and the Space, Seen Further positioning', label: 'brand idea / positioning' },
+    ],
+  },
+  {
+    number: '02',
+    title: 'The skyline in the eye',
+    line: 'An eye represents clarity; rising structures introduce real estate and foresight. Together they form one compact, recognisable mark.',
+    images: [
+      { src: '/images/projects/visionspace/03-logo-idea.webp', alt: 'VisionSpace logo concept combining an eye and building structures', label: 'logo construction / idea' },
+      { src: '/images/projects/visionspace/04-primary-logo.webp', alt: 'Primary VisionSpace logo shown in navy and white', label: 'primary logo / contrast' },
+    ],
+  },
+  {
+    number: '03',
+    title: 'One measured visual language',
+    line: 'The mark, palette and typography work as a restrained system: deep navy for trust, open white space for clarity and type that shifts between expression and explanation.',
+    images: [
+      { src: '/images/projects/visionspace/05-logo-components.webp', alt: 'VisionSpace brandmark and wordmark shown separately', label: 'brandmark / wordmark' },
+      { src: '/images/projects/visionspace/06-colour-system.webp', alt: 'VisionSpace deep navy, mist grey and pure white colour palette', label: 'colour system' },
+      { src: '/images/projects/visionspace/07-typography.webp', alt: 'VisionSpace typography system using Modamode and Hanken Grotesk', label: 'typography system' },
+    ],
+  },
+  {
+    number: '04',
+    title: 'Discipline protects recognition',
+    line: 'Clear-space, minimum-size and misuse rules keep the skyline legible and the identity consistent across every scale and surface.',
+    images: [
+      { src: '/images/projects/visionspace/08-clear-space.webp', alt: 'VisionSpace logo clear-space and minimum-size rules', label: 'clear space / scale' },
+      { src: '/images/projects/visionspace/09-logo-misuse.webp', alt: 'Examples of incorrect VisionSpace logo usage', label: 'logo misuse' },
+    ],
+  },
+  {
+    number: '05',
+    title: 'The identity at work',
+    line: 'A quiet, navy-led system moves from strategic guideline into practical business touchpoints without losing its sense of space.',
+    images: [
+      { src: '/images/projects/visionspace/10-applications-overview.webp', alt: 'Overview of VisionSpace brand applications', label: 'application system' },
+      { src: '/images/projects/visionspace/11-business-cards.webp', alt: 'VisionSpace navy and white business card applications', label: 'business cards' },
+      { src: '/images/projects/visionspace/12-letterhead.webp', alt: 'VisionSpace letterhead on a navy surface', label: 'letterhead' },
+      { src: '/images/projects/visionspace/13-branded-pen.webp', alt: 'VisionSpace logo applied to a navy pen', label: 'branded stationery' },
+    ],
+  },
+  {
+    number: '06',
+    title: 'An advisor, never a hoarding',
+    line: 'The verbal identity closes the system with the same restraint: inform before persuading, show evidence and speak plainly.',
+    images: [
+      { src: '/images/projects/visionspace/14-voice-tone.webp', alt: 'VisionSpace voice and tone principles', label: 'voice / tone' },
+      { src: '/images/projects/visionspace/15-closing-mark.webp', alt: 'VisionSpace closing brand mark on a deep navy background', label: 'closing identity' },
+    ],
+  },
+] as const;
+---
+
+<BaseLayout
+  title="VisionSpace Realty Brand Identity | Muzammil Ansari"
+  description="A visual case study of the VisionSpace Realty identity and brand-guideline system by Muzammil Ansari."
+  socialImage="/images/projects/vision-space-reality.webp"
+  socialImageWidth={2400}
+  socialImageHeight={1500}
+>
+  <InteractionLayer client:load />
+  <Header />
+
+  <main id="main" class="project-page visionspace-project">
+    <section id="project-top" class="project-hero visionspace-hero page-gutter" aria-labelledby="project-title">
+      <div class="project-hero__meta" data-load>
+        <a href="/#work">← back to work</a>
+        <span>01 / brand identity</span>
+        <a href={guidelinesUrl} target="_blank" rel="noopener noreferrer">view guidelines ↗</a>
+      </div>
+
+      <h1 id="project-title">
+        <span data-load>VISIONSPACE</span>
+        <span data-load>REALTY</span>
+      </h1>
+
+      <div class="project-hero__intro" data-reveal>
+        <p>A real-estate identity built to turn foresight, clarity and long-term confidence into one disciplined visual system.</p>
+        <p>The first presentation is shaped from the supplied brand-guideline sections. Copy remains open for refinement after review.</p>
+      </div>
+    </section>
+
+    <section class="project-stage visionspace-stage page-gutter" aria-label="VisionSpace Realty identity presentation">
+      <div class="project-stage__label">
+        <span>brand identity guidelines</span>
+        <span>VisionSpace Realty</span>
+      </div>
+
+      <figure class="visionspace-stage__cover" data-reveal>
+        <img src="/images/projects/visionspace/01-cover.webp" alt="VisionSpace Realty brand identity guidelines cover" width="1600" height="900" decoding="async" />
+      </figure>
+
+      <div class="project-stage__caption">
+        <span>space, seen further</span>
+        <p>The opening establishes a restrained world of deep navy, architectural light and a skyline designed to hold a clear point of view.</p>
+      </div>
+    </section>
+
+    <section class="project-brief page-gutter">
+      <div class="project-section-heading" data-reveal>
+        <span>01 / the brief</span>
+        <h2>Make clarity feel like a competitive advantage.</h2>
+      </div>
+
+      <div class="project-brief__copy" data-reveal>
+        <p>VisionSpace Realty is a Panvel-based real-estate consultancy focused on helping buyers and investors understand where a location is heading. The identity needed to feel measured, transparent and forward-looking—more like a trusted advisor than a conventional property seller.</p>
+      </div>
+    </section>
+
+    <dl class="project-facts page-gutter" data-reveal>
+      <div><dt>project type</dt><dd>Real-estate identity</dd></div>
+      <div><dt>role</dt><dd>Brand Designer</dd></div>
+      <div><dt>deliverables</dt><dd>Identity + guidelines</dd></div>
+    </dl>
+
+    <section class="project-direction visionspace-direction page-gutter">
+      <div class="project-direction__title" data-reveal>
+        <span>02 / design direction</span>
+        <h2>See clearly.<br />Think further.</h2>
+      </div>
+
+      <div class="project-principles">
+        <article data-reveal>
+          <span>01</span>
+          <h3>Foresight</h3>
+          <p>A skyline rising inside an eye turns future value and location intelligence into one visual idea.</p>
+        </article>
+        <article data-reveal>
+          <span>02</span>
+          <h3>Trust</h3>
+          <p>Deep navy, high contrast and calm composition give the identity authority without manufactured urgency.</p>
+        </article>
+        <article data-reveal>
+          <span>03</span>
+          <h3>Discipline</h3>
+          <p>Strict colour, typography and usage rules make every touchpoint feel deliberate and consistent.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="project-walkthrough visionspace-walkthrough page-gutter" aria-labelledby="walkthrough-title">
+      <div class="project-section-heading" data-reveal>
+        <span>03 / identity system</span>
+        <h2 id="walkthrough-title">From a point of view to a complete brand world.</h2>
+      </div>
+
+      <div class="project-chapters visionspace-chapters">
+        {chapters.map((chapter) => (
+          <article class="project-chapter visionspace-chapter">
+            <div class="project-chapter__copy" data-reveal>
+              <span>{chapter.number}</span>
+              <h3>{chapter.title}</h3>
+              <p>{chapter.line}</p>
+            </div>
+
+            <div class={`visionspace-gallery visionspace-gallery--${chapter.images.length}`} data-reveal>
+              {chapter.images.map((image) => (
+                <figure class="visionspace-spread">
+                  <img src={image.src} alt={image.alt} width="1600" height="900" loading="lazy" decoding="async" />
+                  <figcaption><span>{image.label}</span><span>brand guidelines</span></figcaption>
+                </figure>
+              ))}
+            </div>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <section class="project-status page-gutter">
+      <div data-reveal>
+        <span>04 / first edit</span>
+        <p>This case study presents the strongest moments from the supplied guideline sections. The final written edit can be refined against the complete combined document.</p>
+      </div>
+
+      <div class="project-end-actions" data-reveal>
+        <a class="project-end-action" href={guidelinesUrl} target="_blank" rel="noopener noreferrer">
+          <span>
+            <small>complete document / 24 pages</small>
+            <strong>View full guidelines</strong>
+          </span>
+          <b aria-hidden="true">↗</b>
+        </a>
+        <a class="project-end-action" href="#project-top">
+          <span>
+            <small>navigation</small>
+            <strong>Back to top</strong>
+          </span>
+          <b aria-hidden="true">↑</b>
+        </a>
+      </div>
+
+      <nav class="project-return" aria-label="Project navigation">
+        <a href="/#work">← selected work</a>
+        <a href="/">homepage ↑</a>
+      </nav>
+    </section>
+  </main>
+
+  <Footer />
+</BaseLayout>

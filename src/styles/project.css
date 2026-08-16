@@ -107,6 +107,24 @@
 .swanand-screen img { width: 100%; height: auto; display: block; border: 1px solid var(--ink); border-radius: clamp(1rem, 1.8vw, 1.8rem); box-shadow: 0 1.5rem 3rem rgb(33 23 29 / 14%); background: #f7f1d8; }
 .swanand-screen figcaption { display: flex; justify-content: space-between; gap: 1rem; padding-top: .8rem; font: .58rem var(--font-text); text-transform: lowercase; }
 
+/* VisionSpace Realty brand identity */
+.project-hero.visionspace-hero h1 span:first-child { white-space: nowrap; font-size: clamp(4rem, 10.3vw, 11.8rem); }
+.project-hero.visionspace-hero h1 span:last-child { font-size: clamp(4rem, 9vw, 10rem); }
+.visionspace-stage { background: #16263f; }
+.visionspace-stage__cover { margin: clamp(2.5rem, 5vw, 5rem) 0 0; overflow: hidden; border: 1px solid #e7e8ec; opacity: 0; }
+.visionspace-stage__cover img { width: 100%; height: auto; display: block; }
+.visionspace-stage .project-stage__caption { border-top-color: #e7e8ec; }
+.visionspace-direction { background: #16263f; }
+.visionspace-gallery { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(1rem, 2vw, 2rem); padding: clamp(1rem, 2.5vw, 2.5rem); border: 1px solid var(--ink); background: #e7e8ec; opacity: 0; }
+.visionspace-gallery--1 { grid-template-columns: 1fr; padding: 0; }
+.visionspace-gallery--3 .visionspace-spread:first-child { grid-column: 1 / -1; }
+.visionspace-spread { margin: 0; }
+.visionspace-spread img { width: 100%; height: auto; display: block; border: 1px solid #16263f; background: white; }
+.visionspace-spread figcaption { display: flex; justify-content: space-between; gap: 1rem; padding-top: .7rem; color: #16263f; font: .58rem var(--font-text); text-transform: lowercase; }
+.visionspace-gallery--1 .visionspace-spread figcaption { padding: .8rem 0 0; }
+.visionspace-chapter:nth-child(5) .visionspace-gallery { background: #16263f; }
+.visionspace-chapter:nth-child(5) .visionspace-spread figcaption { color: #e7e8ec; }
+
 @media (max-width: 620px) {
   .project-title-mobile-break { display: block; }
   .project-hero.swanand-hero h1 { gap: .8rem; }
@@ -120,6 +138,11 @@
   .swanand-screen { width: min(100%, 13rem); }
   .swanand-screen:nth-child(2) { transform: translateY(2.5rem); }
   .swanand-screen figcaption span:last-child { display: none; }
+  .project-hero.visionspace-hero h1 span:first-child { white-space: nowrap; font-size: clamp(2.65rem, 11vw, 3.65rem); letter-spacing: -.075em; line-height: .85; }
+  .project-hero.visionspace-hero h1 span:last-child { font-size: clamp(3.2rem, 15vw, 4.7rem); }
+  .visionspace-gallery { grid-template-columns: 1fr; padding: .7rem; }
+  .visionspace-gallery--3 .visionspace-spread:first-child { grid-column: auto; }
+  .visionspace-spread figcaption span:last-child { display: none; }
 }
 
 @media (max-width: 900px) {
@@ -167,5 +190,5 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .project-hero__meta, .project-hero h1 span, .project-hero__intro, .project-window, .project-section-heading, .project-brief__copy, .project-facts, .project-direction__title, .project-principles article, .project-chapter__copy, .project-chapter__frame, .swanand-stage__canvas, .swanand-screen-pair, .project-status > div, .project-status > .project-end-actions { opacity: 1; }
+  .project-hero__meta, .project-hero h1 span, .project-hero__intro, .project-window, .visionspace-stage__cover, .visionspace-gallery, .project-section-heading, .project-brief__copy, .project-facts, .project-direction__title, .project-principles article, .project-chapter__copy, .project-chapter__frame, .swanand-stage__canvas, .swanand-screen-pair, .project-status > div, .project-status > .project-end-actions { opacity: 1; }
 }

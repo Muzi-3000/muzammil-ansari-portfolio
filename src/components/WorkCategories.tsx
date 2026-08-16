@@ -60,14 +60,16 @@ const categories: ReadonlyArray<{
     summary: 'Visual identities built from a clear idea, then extended into coherent systems with room to grow.',
     projects: [
       {
-        title: 'VisionSpace Reality',
+        title: 'VisionSpace Realty',
         description: 'A detailed identity guideline for a real estate agency, covering brand voice, logo usage, marks, colour theory and visual discipline.',
         mark: 'VS',
         plate: 'blocks',
         discipline: 'real estate · brand guidelines',
-        action: 'brand document to be added',
+        action: 'view identity case study',
         thumbnail: '/images/projects/vision-space-reality.webp',
-        thumbnailAlt: 'VisionSpace Reality brand identity thumbnail',
+        thumbnailAlt: 'VisionSpace Realty brand identity thumbnail',
+        href: '/work/visionspace-realty',
+        status: 'brand identity system',
       },
       {
         title: 'Prime Charge',
@@ -92,10 +94,10 @@ const categories: ReadonlyArray<{
     ],
   },
   {
-    id: 'campaigns',
-    label: 'Campaigns',
-    meta: 'social · posters · restaurant campaigns',
-    summary: 'Campaign thinking translated across formats, from one visual direction to a complete content system.',
+    id: 'logo-designing',
+    label: 'Logo Designing',
+    meta: 'marks · symbols · visual signatures',
+    summary: 'Distinctive logo ideas shaped into clear, memorable marks with the flexibility to work across every scale.',
     projects: [],
   },
   {
@@ -234,9 +236,9 @@ export default function WorkCategories() {
                           </article>
                         )) : (
                           <div className="work-project-empty">
-                            <span>campaign archive</span>
-                            <strong>POSTER SELECTION IN PROGRESS</strong>
-                            <p>Campaign projects will be added after the final poster selection is ready.</p>
+                            <span>logo archive</span>
+                            <strong>LOGO SELECTION IN PROGRESS</strong>
+                            <p>Selected logo-design projects will be added as their presentations are prepared.</p>
                           </div>
                         )}
                       </div>
