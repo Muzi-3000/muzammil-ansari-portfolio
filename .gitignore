@@ -1,6 +1,7 @@
 node_modules/
 .astro/
 dist/
+.wrangler/
 
 # Local environment files (keep a documented example if one is added)
 .env
