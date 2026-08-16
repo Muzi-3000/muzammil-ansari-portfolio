@@ -190,7 +190,6 @@ button { color: inherit; font: inherit; }
 .work-project-empty > p { max-width: 30ch; align-self: end; justify-self: end; margin: 0; text-align: right; font: .62rem/1.5 var(--font-text); }
 
 .mindset { position: relative; min-height: clamp(44rem, 92svh, 72rem); display: flex; align-items: center; overflow: hidden; border-top: 1px solid var(--ink); }
-.mindset::before { content: ''; position: absolute; top: 10%; bottom: 10%; left: 66.666%; width: 1px; background: var(--ink); transform: scaleY(.45); transform-origin: center; transition: transform 1s var(--ease); }
 .mindset::after { content: ''; position: absolute; right: var(--gutter); bottom: 10%; left: var(--gutter); height: 1px; background: var(--ink); transform: scaleX(.35); transform-origin: left; transition: transform 1s var(--ease); }
 .mindset blockquote { position: relative; z-index: 1; width: 100%; margin: 0; opacity: 0; }
 .mindset blockquote > p { margin: 0; font: 490 clamp(4rem, 8.6vw, 9.7rem)/.92 var(--font-text); letter-spacing: -.07em; }
@@ -198,7 +197,7 @@ button { color: inherit; font: inherit; }
 .mindset blockquote > p span:last-child { padding-left: clamp(2rem, 10vw, 12rem); }
 .mindset blockquote > cite { display: block; margin: clamp(2rem, 4vw, 4rem) 0 0 clamp(2rem, 10vw, 12rem); font: normal .68rem/1.4 var(--font-text); letter-spacing: .02em; }
 .mindset > b { position: absolute; z-index: 0; top: 13%; right: clamp(1.5rem, 5vw, 6rem); font: 300 clamp(8rem, 17vw, 18rem)/.7 var(--font-display); transition: transform 1s var(--ease); }
-.mindset:hover::before, .mindset:hover::after { transform: scale(1); }
+.mindset:hover::after { transform: scaleX(1); }
 .mindset:hover blockquote > p span:first-child { transform: translateX(.45rem); }
 .mindset:hover blockquote > p span:last-child { transform: translateX(-.45rem); }
 .mindset:hover > b { transform: rotate(32deg) scale(.92); }
@@ -420,7 +419,6 @@ button { color: inherit; font: inherit; }
   .work-project-empty { min-height: 24rem; grid-template-columns: 1fr; grid-template-rows: auto 1fr auto; }
   .work-project-empty > p { justify-self: start; text-align: left; }
   .mindset { min-height: 78svh; }
-  .mindset::before { left: 78%; }
   .mindset blockquote > p { font-size: clamp(3.5rem, 15vw, 5.6rem); line-height: .94; }
   .mindset blockquote > p span:last-child { padding-left: 0; }
   .mindset blockquote > cite { margin-left: 0; }
