@@ -1,0 +1,5 @@
+---
+type Props = { double?: boolean; light?: boolean };
+const { double = false, light = false } = Astro.props;
+---
+<div class:list={['rule', { 'rule--double': double, 'rule--light': light }]} aria-hidden="true"><i></i><i></i></div>

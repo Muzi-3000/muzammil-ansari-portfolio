@@ -1,0 +1,85 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Rule from '../components/Rule.astro';
+import Ticker from '../components/Ticker.astro';
+import SectionBar from '../components/SectionBar.astro';
+import WorkCategories from '../components/WorkCategories';
+import Footer from '../components/Footer.astro';
+import InteractionLayer from '../components/InteractionLayer';
+---
+
+<BaseLayout>
+  <InteractionLayer client:load />
+  <Header />
+  <main id="main">
+    <section class="hero" aria-labelledby="hero-title">
+      <Rule double />
+      <div class="hero__title" id="hero-title">
+        <div class="mask hero__name hero__name--first"><h1 data-load>mohd</h1></div>
+        <div class="mask hero__name hero__name--middle"><h1 data-load>muzammil</h1></div>
+        <div class="mask hero__name hero__name--last"><h1 data-load>ansari</h1></div>
+      </div>
+      <div class="hero__meta" data-reveal>
+        <p>brand &amp; ui/ux designer</p>
+        <b aria-hidden="true">*</b>
+        <p>identity · campaigns · packaging</p>
+        <b aria-hidden="true">*</b>
+        <p>mumbai · working worldwide</p>
+      </div>
+      <Rule double />
+      <div class="hero__coil" aria-hidden="true">
+        {Array.from({ length: 18 }).map(() => <i></i>)}
+      </div>
+    </section>
+
+    <Ticker />
+
+    <section class="about page-gutter" id="about">
+      <div class="about__bar" data-reveal>
+        <h2>about me</h2>
+        <p>designer, not decorator</p>
+      </div>
+      <div class="about__grid">
+        <div class="about__story" data-reveal>
+          <p class="about__statement">
+            I’m a computer engineer who found his way into design. I stayed for the balance of <mark>logic and expression.</mark>
+          </p>
+          <p class="about__bio">
+            I started designing in college, first through graphics and later through UI/UX. Engineering taught me to ask how things work; design taught me to notice how they feel. Somewhere between the two, I found my way of working: structured, considered and never random. My professional experience includes campaigns and visual content for restaurants across the UK. Alongside that, I’ve worked directly with clients on brand identities, app interfaces and packaging, with every detail given a job to do.
+          </p>
+        </div>
+        <dl class="about__facts" data-reveal>
+          <div><dt>currently</dt><dd>Graphic Designer, Digital GB</dd></div>
+          <div><dt>since</dt><dd>July 2025</dd></div>
+          <div><dt>background</dt><dd>Computer Engineering</dd></div>
+          <div><dt>focus</dt><dd>Brand identity &amp; UI/UX</dd></div>
+          <div><dt>also</dt><dd>Packaging · Campaigns · Apps</dd></div>
+          <div><dt>tools</dt><dd>Figma · Adobe CC · Affinity · Canva</dd></div>
+          <div><dt>based</dt><dd>Mumbai, IN</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="work page-gutter" id="work">
+      <SectionBar eyebrow="selected work" label="browse by discipline" />
+      <div class="work__lead" data-reveal>
+        <h2>A closer look<br />at what I make.</h2>
+        <p>Brand systems, interfaces, campaigns and packaging. Each shaped by its own brief, process and point of view.</p>
+      </div>
+      <WorkCategories client:load />
+    </section>
+
+    <section class="mindset page-gutter" aria-label="Design philosophy">
+      <blockquote data-reveal>
+        <p>
+          <span>“Every brief deserves</span>
+          <span>its own visual language.”</span>
+        </p>
+        <cite>Muzammil Ansari</cite>
+      </blockquote>
+      <b aria-hidden="true">*</b>
+    </section>
+  </main>
+  <Footer />
+</BaseLayout>

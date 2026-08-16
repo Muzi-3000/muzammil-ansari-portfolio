@@ -1,0 +1,29 @@
+{
+  "name": "muzammil-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro check && astro build && node scripts/prepare-sites.mjs",
+    "preview": "astro preview",
+    "check": "astro check"
+  },
+  "dependencies": {
+    "@astrojs/react": "latest",
+    "@fontsource-variable/instrument-sans": "latest",
+    "@tailwindcss/vite": "latest",
+    "astro": "latest",
+    "lenis": "latest",
+    "motion": "latest",
+    "react": "latest",
+    "react-dom": "latest",
+    "tailwindcss": "latest"
+  },
+  "devDependencies": {
+    "@astrojs/check": "latest",
+    "@types/react": "latest",
+    "@types/react-dom": "latest",
+    "typescript": "latest"
+  }
+}

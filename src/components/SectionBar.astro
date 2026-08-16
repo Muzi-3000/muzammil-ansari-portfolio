@@ -1,0 +1,12 @@
+---
+import Rule from './Rule.astro';
+type Props = { eyebrow: string; label: string; light?: boolean };
+const { eyebrow, label, light = false } = Astro.props;
+---
+<div class:list={['section-bar', { 'section-bar--light': light }]}>
+  <Rule light={light} />
+  <div class="section-bar__meta">
+    <span>{eyebrow}</span>
+    <span>{label}</span>
+  </div>
+</div>
