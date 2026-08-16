@@ -83,6 +83,7 @@
 .project-end-action strong { font: 700 clamp(1.3rem, 2vw, 2rem)/.95 var(--font-display); letter-spacing: -.03em; text-transform: uppercase; }
 .project-end-action b { font: 300 clamp(1.7rem, 2.5vw, 2.6rem)/1 var(--font-display); }
 .project-return { display: flex; justify-content: space-between; gap: 2rem; margin-top: clamp(3rem, 5vw, 5rem); padding: 1rem 0; border-block: 1px solid var(--ink); font: .65rem var(--font-text); text-transform: lowercase; }
+.project-title-mobile-break { display: none; }
 
 /* My Swanand app case study */
 .project-hero.swanand-hero h1 span:first-child { white-space: nowrap; font-size: clamp(4.4rem, 9.5vw, 11rem); }
@@ -107,12 +108,14 @@
 .swanand-screen figcaption { display: flex; justify-content: space-between; gap: 1rem; padding-top: .8rem; font: .58rem var(--font-text); text-transform: lowercase; }
 
 @media (max-width: 620px) {
-  .project-hero.swanand-hero h1 span:first-child { font-size: clamp(3rem, 13.8vw, 4.4rem); }
-  .project-hero.swanand-hero h1 span:last-child { max-width: none; font-size: clamp(2.45rem, 11.3vw, 3.7rem); }
-  .swanand-stage__canvas { min-height: 35rem; }
-  .swanand-stage__phone { width: 12.2rem; }
-  .swanand-stage__phone--left { transform: translate(-58%, 10%) rotate(-5deg); }
-  .swanand-stage__phone--right { transform: translate(58%, 9%) rotate(5deg); }
+  .project-title-mobile-break { display: block; }
+  .project-hero.swanand-hero h1 { gap: .8rem; }
+  .project-hero.swanand-hero h1 span:first-child { width: 100%; max-width: none; white-space: normal; font-size: clamp(3rem, 13vw, 4.2rem); line-height: .86; }
+  .project-hero.swanand-hero h1 span:last-child { width: 100%; max-width: none; align-self: flex-end; white-space: normal; font-size: clamp(2.8rem, 12vw, 4rem); line-height: .86; }
+  .swanand-stage__canvas { min-height: 28rem; }
+  .swanand-stage__phone { width: 8.5rem; border-radius: .9rem; }
+  .swanand-stage__phone--left { transform: translate(-63%, 5%) rotate(-5deg); }
+  .swanand-stage__phone--right { transform: translate(63%, 5%) rotate(5deg); }
   .swanand-screen-pair { min-height: 35rem; gap: .75rem; padding: 2.5rem .9rem 3.5rem; }
   .swanand-screen { width: min(100%, 13rem); }
   .swanand-screen:nth-child(2) { transform: translateY(2.5rem); }
@@ -137,8 +140,8 @@
   .project-hero__meta { grid-template-columns: 1fr auto; }
   .project-hero__meta > span { display: none; }
   .project-hero h1 { padding-block: 4rem; }
-  .project-hero h1 span:first-child { font-size: clamp(4rem, 20vw, 6rem); }
-  .project-hero h1 span:last-child { align-self: flex-start; font-size: clamp(3.45rem, 17.5vw, 5.3rem); }
+  .project-hero h1 span:first-child { font-size: clamp(3.5rem, 16vw, 5rem); }
+  .project-hero h1 span:last-child { align-self: flex-start; font-size: clamp(3.2rem, 15.5vw, 4.8rem); }
   .project-stage { padding-block: 4.5rem; }
   .project-stage__label span:last-child { display: none; }
   .project-window__bar { grid-template-columns: 1fr auto; }
