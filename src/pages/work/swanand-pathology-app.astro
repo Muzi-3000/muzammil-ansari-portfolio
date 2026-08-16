@@ -1,0 +1,236 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import InteractionLayer from '../../components/InteractionLayer';
+import '../../styles/project.css';
+
+const prototypeUrl = 'https://www.figma.com/proto/m146mR3uOqr603K1g4uWWU/Pathology-App?node-id=1-6499&p=f&viewport=55%2C345%2C0.03&t=5WhUr0fNlWguM72g-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=1%3A6499&page-id=0%3A1';
+
+const journeys = [
+  {
+    number: '01',
+    title: 'A calmer first step',
+    line: 'A reassuring entry point moves quickly into a dashboard where the most useful health actions are already within reach.',
+    screens: [
+      {
+        image: '/images/projects/swanand-pathology/01-login.webp',
+        alt: 'My Swanand sign-in screen with the health assistant character',
+        label: 'sign in',
+      },
+      {
+        image: '/images/projects/swanand-pathology/02-home.webp',
+        alt: 'My Swanand home dashboard with search, quick actions and diagnostic tests',
+        label: 'home',
+      },
+    ],
+  },
+  {
+    number: '02',
+    title: 'Tests made scannable',
+    line: 'Individual tests and care packages share one familiar structure, making comparison and booking feel direct rather than clinical.',
+    screens: [
+      {
+        image: '/images/projects/swanand-pathology/03-tests.webp',
+        alt: 'Individual pathology tests with prices and add-to-cart actions',
+        label: 'individual tests',
+      },
+      {
+        image: '/images/projects/swanand-pathology/04-care-packages.webp',
+        alt: 'Pathology care packages with included tests and prices',
+        label: 'care packages',
+      },
+    ],
+  },
+  {
+    number: '03',
+    title: 'Care beyond booking',
+    line: 'Consultation and prescription flows give people more than one route forward, whether they know what they need or want expert help.',
+    screens: [
+      {
+        image: '/images/projects/swanand-pathology/05-consult.webp',
+        alt: 'Doctor and dietician consultation choices in the My Swanand app',
+        label: 'consultation',
+      },
+      {
+        image: '/images/projects/swanand-pathology/06-upload-prescription.webp',
+        alt: 'Secure prescription upload flow with review and consultation guidance',
+        label: 'upload prescription',
+      },
+    ],
+  },
+  {
+    number: '04',
+    title: 'One place for follow-up',
+    line: 'Alerts, history, family profiles and health records stay connected without making the everyday experience feel overloaded.',
+    screens: [
+      {
+        image: '/images/projects/swanand-pathology/07-alerts.webp',
+        alt: 'My Swanand alerts screen with an empty notification state',
+        label: 'alerts',
+      },
+      {
+        image: '/images/projects/swanand-pathology/08-profile.webp',
+        alt: 'Patient profile with history, family, card, transactions and prescriptions',
+        label: 'profile and records',
+      },
+    ],
+  },
+] as const;
+---
+
+<BaseLayout
+  title="My Swanand Pathology App | Muzammil Ansari"
+  description="A visual case study of the My Swanand Pathology mobile app redesign, created in Figma by Muzammil Ansari."
+  socialImage="/images/projects/my-swanand-pathology-v2.webp"
+  socialImageWidth={2400}
+  socialImageHeight={1500}
+>
+  <InteractionLayer client:load />
+  <Header />
+
+  <main id="main" class="project-page swanand-project">
+    <section id="project-top" class="project-hero swanand-hero page-gutter" aria-labelledby="project-title">
+      <div class="project-hero__meta" data-load>
+        <a href="/#work">← back to work</a>
+        <span>02 / UI·UX</span>
+        <a href={prototypeUrl} target="_blank" rel="noopener noreferrer">view prototype ↗</a>
+      </div>
+
+      <h1 id="project-title">
+        <span data-load>MY SWANAND</span>
+        <span data-load>PATHOLOGY APP</span>
+      </h1>
+
+      <div class="project-hero__intro" data-reveal>
+        <p>A mobile healthcare experience designed to make pathology services feel simpler, warmer and easier to act on.</p>
+        <p>This is a UI/UX redesign concept created in Figma. Selected screens are presented here from the wider 54-screen prototype.</p>
+      </div>
+    </section>
+
+    <section class="project-stage swanand-stage page-gutter" aria-label="My Swanand mobile app presentation">
+      <div class="project-stage__label">
+        <span>selected mobile experience</span>
+        <span>54-screen prototype</span>
+      </div>
+
+      <div class="swanand-stage__canvas" data-reveal>
+        <figure class="swanand-stage__phone swanand-stage__phone--left">
+          <img src="/images/projects/swanand-pathology/01-login.webp" alt="My Swanand sign-in screen" width="540" height="1266" decoding="async" />
+        </figure>
+        <figure class="swanand-stage__phone swanand-stage__phone--main">
+          <img src="/images/projects/swanand-pathology/02-home.webp" alt="My Swanand app home dashboard" width="540" height="1266" decoding="async" />
+        </figure>
+        <figure class="swanand-stage__phone swanand-stage__phone--right">
+          <img src="/images/projects/swanand-pathology/08-profile.webp" alt="My Swanand patient profile and records" width="540" height="1266" decoding="async" />
+        </figure>
+      </div>
+
+      <div class="project-stage__caption">
+        <span>healthcare without visual coldness</span>
+        <p>A compact look at the entry, daily dashboard and long-term patient profile—the three layers that hold the wider product together.</p>
+      </div>
+    </section>
+
+    <section class="project-brief page-gutter">
+      <div class="project-section-heading" data-reveal>
+        <span>01 / the brief</span>
+        <h2>Bring everyday healthcare into one clear mobile journey.</h2>
+      </div>
+
+      <div class="project-brief__copy" data-reveal>
+        <p>My Swanand Pathology connects patients with lab tests, care packages, consultations, prescriptions and personal health records. The redesign brings those services into one approachable system, so users can find the right next step without navigating unnecessary complexity.</p>
+      </div>
+    </section>
+
+    <dl class="project-facts page-gutter" data-reveal>
+      <div><dt>project type</dt><dd>Healthcare app</dd></div>
+      <div><dt>role</dt><dd>UI/UX Designer</dd></div>
+      <div><dt>tool</dt><dd>Figma</dd></div>
+    </dl>
+
+    <section class="project-direction page-gutter">
+      <div class="project-direction__title" data-reveal>
+        <span>02 / design direction</span>
+        <h2>Clinical clarity.<br />Human warmth.</h2>
+      </div>
+
+      <div class="project-principles">
+        <article data-reveal>
+          <span>01</span>
+          <h3>Warm confidence</h3>
+          <p>Cream, purple and yellow balance healthcare trust with an approachable, recognisable character.</p>
+        </article>
+        <article data-reveal>
+          <span>02</span>
+          <h3>Clear routes to care</h3>
+          <p>Quick actions and persistent navigation keep tests, consultations and records close at hand.</p>
+        </article>
+        <article data-reveal>
+          <span>03</span>
+          <h3>Guidance, not overload</h3>
+          <p>Friendly language, illustrations and focused cards turn complex health tasks into manageable steps.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="project-walkthrough swanand-walkthrough page-gutter" aria-labelledby="walkthrough-title">
+      <div class="project-section-heading" data-reveal>
+        <span>03 / app walkthrough</span>
+        <h2 id="walkthrough-title">The essential journeys, screen by screen.</h2>
+      </div>
+
+      <div class="project-chapters swanand-journeys">
+        {journeys.map((journey) => (
+          <article class="project-chapter swanand-journey">
+            <div class="project-chapter__copy" data-reveal>
+              <span>{journey.number}</span>
+              <h3>{journey.title}</h3>
+              <p>{journey.line}</p>
+            </div>
+
+            <div class="swanand-screen-pair" data-reveal>
+              {journey.screens.map((screen) => (
+                <figure class="swanand-screen">
+                  <img src={screen.image} alt={screen.alt} width="540" height="1266" loading="lazy" decoding="async" />
+                  <figcaption><span>{screen.label}</span><span>mobile UI / figma</span></figcaption>
+                </figure>
+              ))}
+            </div>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <section class="project-status page-gutter">
+      <div data-reveal>
+        <span>04 / prototype</span>
+        <p>The full product thinking continues beyond these selected screens in an interactive 54-screen Figma prototype.</p>
+      </div>
+
+      <div class="project-end-actions" data-reveal>
+        <a class="project-end-action" href={prototypeUrl} target="_blank" rel="noopener noreferrer">
+          <span>
+            <small>interactive / figma</small>
+            <strong>View prototype</strong>
+          </span>
+          <b aria-hidden="true">↗</b>
+        </a>
+        <a class="project-end-action" href="#project-top">
+          <span>
+            <small>navigation</small>
+            <strong>Back to top</strong>
+          </span>
+          <b aria-hidden="true">↑</b>
+        </a>
+      </div>
+
+      <nav class="project-return" aria-label="Project navigation">
+        <a href="/#work">← all projects</a>
+        <a href="/">homepage ↑</a>
+      </nav>
+    </section>
+  </main>
+
+  <Footer />
+</BaseLayout>

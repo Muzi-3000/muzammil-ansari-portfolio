@@ -84,6 +84,41 @@
 .project-end-action b { font: 300 clamp(1.7rem, 2.5vw, 2.6rem)/1 var(--font-display); }
 .project-return { display: flex; justify-content: space-between; gap: 2rem; margin-top: clamp(3rem, 5vw, 5rem); padding: 1rem 0; border-block: 1px solid var(--ink); font: .65rem var(--font-text); text-transform: lowercase; }
 
+/* My Swanand app case study */
+.project-hero.swanand-hero h1 span:first-child { white-space: nowrap; font-size: clamp(4.4rem, 9.5vw, 11rem); }
+.project-hero.swanand-hero h1 span:last-child { max-width: none; white-space: nowrap; text-align: right; font-size: clamp(3.8rem, 8.4vw, 9.8rem); line-height: .82; }
+.swanand-stage { background: #47256a; }
+.swanand-stage__canvas { position: relative; min-height: clamp(38rem, 70vw, 70rem); display: flex; justify-content: center; align-items: center; margin-top: clamp(2.5rem, 5vw, 5rem); overflow: hidden; border: 1px solid var(--paper); background: #f4efcf; opacity: 0; }
+.swanand-stage__canvas::before, .swanand-stage__canvas::after { position: absolute; content: ''; border-radius: 50%; }
+.swanand-stage__canvas::before { width: clamp(20rem, 45vw, 50rem); aspect-ratio: 1; top: -27%; right: -8%; background: #f2cc19; }
+.swanand-stage__canvas::after { width: clamp(18rem, 38vw, 42rem); aspect-ratio: 1; bottom: -28%; left: -5%; background: #b99bca; }
+.swanand-stage__phone { position: absolute; z-index: 1; width: clamp(13rem, 23vw, 24rem); margin: 0; overflow: hidden; border: 1px solid #17120f; border-radius: clamp(1.2rem, 2vw, 2.2rem); box-shadow: 0 2rem 4rem rgb(35 18 51 / 20%); background: #f9f5dc; }
+.swanand-stage__phone img { width: 100%; height: auto; display: block; }
+.swanand-stage__phone--main { z-index: 2; transform: translateY(-1%); }
+.swanand-stage__phone--left { transform: translate(-78%, 9%) rotate(-5deg); }
+.swanand-stage__phone--right { transform: translate(78%, 7%) rotate(5deg); }
+.swanand-stage .project-stage__caption { border-top-color: var(--paper); }
+
+.swanand-screen-pair { min-height: clamp(44rem, 78vw, 78rem); display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(1rem, 5vw, 7rem); align-items: center; padding: clamp(2.5rem, 7vw, 7rem); overflow: hidden; border: 1px solid var(--ink); background: #ece3f1; opacity: 0; }
+.swanand-journey:nth-child(even) .swanand-screen-pair { background: #f4efcf; }
+.swanand-screen { width: min(100%, 25rem); margin: 0; justify-self: center; }
+.swanand-screen:nth-child(2) { transform: translateY(clamp(2rem, 6vw, 7rem)); }
+.swanand-screen img { width: 100%; height: auto; display: block; border: 1px solid var(--ink); border-radius: clamp(1rem, 1.8vw, 1.8rem); box-shadow: 0 1.5rem 3rem rgb(33 23 29 / 14%); background: #f7f1d8; }
+.swanand-screen figcaption { display: flex; justify-content: space-between; gap: 1rem; padding-top: .8rem; font: .58rem var(--font-text); text-transform: lowercase; }
+
+@media (max-width: 620px) {
+  .project-hero.swanand-hero h1 span:first-child { font-size: clamp(3rem, 13.8vw, 4.4rem); }
+  .project-hero.swanand-hero h1 span:last-child { max-width: none; font-size: clamp(2.45rem, 11.3vw, 3.7rem); }
+  .swanand-stage__canvas { min-height: 35rem; }
+  .swanand-stage__phone { width: 12.2rem; }
+  .swanand-stage__phone--left { transform: translate(-58%, 10%) rotate(-5deg); }
+  .swanand-stage__phone--right { transform: translate(58%, 9%) rotate(5deg); }
+  .swanand-screen-pair { min-height: 35rem; gap: .75rem; padding: 2.5rem .9rem 3.5rem; }
+  .swanand-screen { width: min(100%, 13rem); }
+  .swanand-screen:nth-child(2) { transform: translateY(2.5rem); }
+  .swanand-screen figcaption span:last-child { display: none; }
+}
+
 @media (max-width: 900px) {
   .project-hero__intro, .project-brief { grid-template-columns: 1fr; }
   .project-hero__intro { gap: 2rem; }
@@ -129,5 +164,5 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .project-hero__meta, .project-hero h1 span, .project-hero__intro, .project-window, .project-section-heading, .project-brief__copy, .project-facts, .project-direction__title, .project-principles article, .project-chapter__copy, .project-chapter__frame, .project-status > div, .project-status > .project-end-actions { opacity: 1; }
+  .project-hero__meta, .project-hero h1 span, .project-hero__intro, .project-window, .project-section-heading, .project-brief__copy, .project-facts, .project-direction__title, .project-principles article, .project-chapter__copy, .project-chapter__frame, .swanand-stage__canvas, .swanand-screen-pair, .project-status > div, .project-status > .project-end-actions { opacity: 1; }
 }
