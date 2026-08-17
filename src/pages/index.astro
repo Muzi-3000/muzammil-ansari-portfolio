@@ -1,37 +1,21 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from '../components/Header.astro';
-import Rule from '../components/Rule.astro';
+import HierarchyHero from '../components/HierarchyHero';
 import Ticker from '../components/Ticker.astro';
 import SectionBar from '../components/SectionBar.astro';
 import WorkCategories from '../components/WorkCategories';
 import Footer from '../components/Footer.astro';
 import InteractionLayer from '../components/InteractionLayer';
+import DesignPrinciples from '../components/DesignPrinciples';
 ---
 
 <BaseLayout>
   <InteractionLayer client:load />
+  <DesignPrinciples client:load />
   <Header />
   <main id="main">
-    <section class="hero" aria-labelledby="hero-title">
-      <Rule double />
-      <div class="hero__title" id="hero-title">
-        <div class="mask hero__name hero__name--first"><h1 data-load>mohd</h1></div>
-        <div class="mask hero__name hero__name--middle"><h1 data-load>muzammil</h1></div>
-        <div class="mask hero__name hero__name--last"><h1 data-load>ansari</h1></div>
-      </div>
-      <div class="hero__meta" data-reveal>
-        <p>brand &amp; ui/ux designer</p>
-        <b aria-hidden="true">*</b>
-        <p>ui/ux · brand identity · logo designing · packaging</p>
-        <b aria-hidden="true">*</b>
-        <p>mumbai · working worldwide</p>
-      </div>
-      <Rule double />
-      <div class="hero__coil" aria-hidden="true">
-        {Array.from({ length: 18 }).map(() => <i></i>)}
-      </div>
-    </section>
+    <HierarchyHero client:load />
 
     <Ticker />
 
@@ -70,7 +54,11 @@ import InteractionLayer from '../components/InteractionLayer';
       <WorkCategories client:load />
     </section>
 
-    <section class="mindset page-gutter" aria-label="Design philosophy">
+    <section class="mindset page-gutter" aria-label="Design philosophy and contrast demonstration" data-contrast-section>
+      <div class="mindset__principle">
+        <span>06 / contrast</span>
+        <p>drag across the composition to decide what speaks first</p>
+      </div>
       <blockquote data-reveal>
         <p>
           <span>“Every brief deserves</span>
@@ -79,6 +67,8 @@ import InteractionLayer from '../components/InteractionLayer';
         <cite>Muzammil Ansari</cite>
       </blockquote>
       <b aria-hidden="true">*</b>
+      <div class="mindset__contrast-line" aria-hidden="true"><i></i></div>
+      <input class="mindset__contrast-range" type="range" min="8" max="92" value="38" aria-label="Move the contrast divider" data-contrast-range />
     </section>
   </main>
   <Footer />

@@ -32,7 +32,7 @@ export default function InteractionLayer() {
       targetX = event.clientX;
       targetY = event.clientY;
       cursor?.classList.add('is-visible');
-      const interactive = (event.target as HTMLElement).closest('a, button, [data-magnetic]');
+      const interactive = (event.target as HTMLElement).closest('a, button, input, [data-magnetic]');
       cursor?.classList.toggle('is-interactive', Boolean(interactive));
     };
     const onPointerDownCursor = () => cursor?.classList.add('is-down');

@@ -1,8 +1,12 @@
 ---
 import SectionBar from './SectionBar.astro';
 ---
-<footer class="contact" id="contact">
+<footer class="contact" id="contact" data-balance-section>
   <SectionBar eyebrow="contact" label="start a conversation" light />
+  <div class="contact__balance-panel">
+    <p><span>07 / balance</span><span data-balance-readout>move to shift visual weight</span></p>
+    <input type="range" min="-100" max="100" value="0" aria-label="Adjust the composition's visual balance" data-balance-range />
+  </div>
   <div class="contact__main" data-reveal>
     <p class="contact__kicker">Have a project in mind?</p>
     <a class="contact__title" href="mailto:AnsariUzamil3000@gmail.com" data-magnetic>

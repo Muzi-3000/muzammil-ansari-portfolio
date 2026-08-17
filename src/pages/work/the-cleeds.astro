@@ -1,0 +1,241 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import InteractionLayer from '../../components/InteractionLayer';
+import '../../styles/project.css';
+
+const conceptNotes = [
+  {
+    number: '01',
+    title: 'A bucket in the word',
+    copy: 'The extended L and inner stroke of the D close around the centre, turning the lettering into a subtle seed bucket.',
+  },
+  {
+    number: '02',
+    title: 'The seed sits inside',
+    copy: 'The central E forms are held inside that structure, making growth part of the name instead of adding a separate farming symbol.',
+  },
+  {
+    number: '03',
+    title: 'Growth completes it',
+    copy: 'A small two-leaf sprout rises from the centre, revealing the organic idea only after the wordmark has been read.',
+  },
+  {
+    number: '04',
+    title: 'Tropic Jungle, reshaped',
+    copy: 'The typeface brings an irregular, playful rhythm; customised strokes give it structure, ownership and a calmer finish.',
+  },
+] as const;
+
+const applications = [
+  { src: '/images/projects/the-cleeds/06-business-cards.webp', alt: 'The Cleeds logo applied to deep-green and pale-green recycled-paper business cards', label: 'business cards', note: 'recycled paper / two-colour system' },
+  { src: '/images/projects/the-cleeds/07-shopping-bags.webp', alt: 'The Cleeds logo applied to two recycled-paper shopping bags in a garden store', label: 'shopping bags', note: 'retail application' },
+  { src: '/images/projects/the-cleeds/08-seed-pouches-v2.jpg', alt: 'The Cleeds chia, sunflower and flax seed packaging with botanical imagery and product windows', label: 'seed pouches', note: 'packaging application' },
+  { src: '/images/projects/the-cleeds/09-social-profile.webp', alt: 'The Cleeds social profile concept displayed on a smartphone', label: 'social profile', note: 'digital application' },
+] as const;
+---
+
+<BaseLayout
+  title="The Cleeds Logo Design | Muzammil Ansari"
+  description="A focused logo-design case study for The Cleeds, an organic seed company with a playful wordmark concealing a seed, bucket and growing sprout."
+  socialImage="/images/projects/the-cleeds.webp"
+  socialImageWidth={2400}
+  socialImageHeight={1600}
+>
+  <InteractionLayer client:load />
+  <Header />
+
+  <main id="main" class="project-page cleeds-project">
+    <section id="project-top" class="project-hero cleeds-hero page-gutter" aria-labelledby="project-title">
+      <div class="project-hero__meta" data-load>
+        <a href="/#work">← back to work</a>
+        <span>02 / logo designing</span>
+        <a href="#logo-concept">view concept ↓</a>
+      </div>
+
+      <h1 id="project-title">
+        <span data-load>THE</span>
+        <span data-load>CLEEDS</span>
+      </h1>
+
+      <div class="project-hero__intro" data-reveal>
+        <p>A clean organic-seed logo with a playful voice—and a small growth story hidden inside the name.</p>
+        <p>The client wanted something minimal, calm and trustworthy without losing warmth. The final wordmark lets the organic idea emerge through the lettering itself.</p>
+      </div>
+    </section>
+
+    <section class="project-stage cleeds-stage page-gutter" aria-label="The Cleeds logo presentation">
+      <div class="project-stage__label">
+        <span>organic seed company / final wordmark</span>
+        <span>The Cleeds</span>
+      </div>
+
+      <figure class="cleeds-stage__visual" data-reveal>
+        <img src="/images/projects/the-cleeds/01-dark-logo.webp" alt="The Cleeds pale-green wordmark on a deep-green background" width="2000" height="1333" decoding="async" />
+      </figure>
+
+      <div class="project-stage__caption">
+        <span>the science of purity</span>
+        <p>A distinctive custom wordmark carries the identity, while a restrained sprout makes its category visible without turning the logo into a generic leaf symbol.</p>
+      </div>
+    </section>
+
+    <section class="project-brief page-gutter">
+      <div class="project-section-heading" data-reveal>
+        <span>01 / the brief</span>
+        <h2>Make organic feel clear, credible and full of character.</h2>
+      </div>
+
+      <div class="project-brief__copy" data-reveal>
+        <p>The Cleeds is an organic seed company. Its logo needed to feel minimal and dependable, but never corporate or cold. The brief called for a mark that could communicate purity and trust while keeping enough playful energy to feel approachable.</p>
+      </div>
+    </section>
+
+    <dl class="project-facts page-gutter" data-reveal>
+      <div><dt>project type</dt><dd>Organic seed logo</dd></div>
+      <div><dt>role</dt><dd>Logo Designer</dd></div>
+      <div><dt>typeface</dt><dd>Tropic Jungle</dd></div>
+    </dl>
+
+    <section class="project-direction cleeds-direction page-gutter">
+      <div class="project-direction__title" data-reveal>
+        <span>02 / design direction</span>
+        <h2>Simple.<br />Playful. Rooted.</h2>
+      </div>
+
+      <div class="project-principles">
+        <article data-reveal>
+          <span>01</span>
+          <h3>Minimal</h3>
+          <p>One continuous wordmark carries the idea, keeping the logo easy to recognise and apply.</p>
+        </article>
+        <article data-reveal>
+          <span>02</span>
+          <h3>Playful</h3>
+          <p>Irregular letterforms and the small sprout add personality without turning the mark childish.</p>
+        </article>
+        <article data-reveal>
+          <span>03</span>
+          <h3>Trustable</h3>
+          <p>Calm greens, generous space and a controlled lockup give the playful type a steady foundation.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="logo-concept" class="cleeds-concept page-gutter" aria-labelledby="cleeds-concept-title">
+      <div class="project-section-heading" data-reveal>
+        <span>03 / hidden concept</span>
+        <h2 id="cleeds-concept-title">A seed bucket hiding in plain sight.</h2>
+      </div>
+
+      <figure class="cleeds-concept__figure" data-reveal>
+        <img src="/images/projects/the-cleeds/03-concept.webp" alt="The Cleeds wordmark with the central bucket, seed and sprout concept highlighted" width="2000" height="1333" loading="lazy" decoding="async" />
+        <figcaption><span>concept reveal</span><span>L + E + D / bucket + seed + sprout</span></figcaption>
+      </figure>
+
+      <div class="cleeds-concept__notes">
+        {conceptNotes.map((note) => (
+          <article data-reveal>
+            <span>{note.number}</span>
+            <h3>{note.title}</h3>
+            <p>{note.copy}</p>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <section class="cleeds-system page-gutter" aria-labelledby="cleeds-system-title">
+      <div class="project-section-heading" data-reveal>
+        <span>04 / visual system</span>
+        <h2 id="cleeds-system-title">Four colours. One quiet organic rhythm.</h2>
+      </div>
+
+      <div class="cleeds-palette" data-reveal aria-label="The Cleeds logo colour palette">
+        <div style="--swatch: #016531; --swatch-ink: #e4ffb5"><span>Seed green</span><b>#016531</b></div>
+        <div style="--swatch: #014d26; --swatch-ink: #ffffff"><span>Forest</span><b>#014D26</b></div>
+        <div style="--swatch: #e4ffb5; --swatch-ink: #016531"><span>Fresh growth</span><b>#E4FFB5</b></div>
+        <div style="--swatch: #ffffff; --swatch-ink: #000000"><span>White</span><b>#FFFFFF</b></div>
+      </div>
+
+      <div class="cleeds-type" data-reveal>
+        <span>chosen typeface</span>
+        <strong>Tropic<br />Jungle</strong>
+        <p>Its tall, irregular forms feel grown rather than engineered. The playful base was then reshaped into a more ownable wordmark.</p>
+      </div>
+    </section>
+
+    <section class="cleeds-variations page-gutter" aria-labelledby="cleeds-variations-title">
+      <div class="project-section-heading" data-reveal>
+        <span>05 / logo variations</span>
+        <h2 id="cleeds-variations-title">The same personality across every contrast.</h2>
+      </div>
+
+      <div class="cleeds-variations__grid">
+        <figure data-reveal>
+          <img src="/images/projects/the-cleeds/02-light-logo.webp" alt="Deep-green The Cleeds logo on a pale-green background" width="2000" height="1333" loading="lazy" decoding="async" />
+          <figcaption><span>light-ground lockup</span><span>green / pale green</span></figcaption>
+        </figure>
+        <figure data-reveal>
+          <img src="/images/projects/the-cleeds/01-dark-logo.webp" alt="Pale-green The Cleeds logo on a deep-green background" width="2000" height="1333" loading="lazy" decoding="async" />
+          <figcaption><span>dark-ground lockup</span><span>pale green / green</span></figcaption>
+        </figure>
+        <figure data-reveal>
+          <img src="/images/projects/the-cleeds/04-black-on-white.webp" alt="Black The Cleeds logo on a white background" width="1800" height="2700" loading="lazy" decoding="async" />
+          <figcaption><span>single colour</span><span>black on white</span></figcaption>
+        </figure>
+        <figure data-reveal>
+          <img src="/images/projects/the-cleeds/05-white-on-black.webp" alt="White The Cleeds logo on a black background" width="1800" height="2700" loading="lazy" decoding="async" />
+          <figcaption><span>reverse</span><span>white on black</span></figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="cleeds-applications page-gutter" aria-labelledby="cleeds-applications-title">
+      <div class="project-section-heading" data-reveal>
+        <span>06 / applications</span>
+        <h2 id="cleeds-applications-title">A logo designed to grow into real touchpoints.</h2>
+      </div>
+
+      <div class="cleeds-applications__grid">
+        {applications.map((application) => (
+          <figure data-reveal>
+            <img src={application.src} alt={application.alt} width="1536" height="1024" loading="lazy" decoding="async" />
+            <figcaption><span>{application.label}</span><span>{application.note}</span></figcaption>
+          </figure>
+        ))}
+      </div>
+    </section>
+
+    <section class="project-status page-gutter">
+      <div data-reveal>
+        <span>07 / project focus</span>
+        <p>A playful wordmark made credible through a clear idea and a calm system.</p>
+      </div>
+
+      <div class="project-end-actions" data-reveal>
+        <a class="project-end-action" href="/#work">
+          <span>
+            <small>portfolio</small>
+            <strong>Selected work</strong>
+          </span>
+          <b aria-hidden="true">←</b>
+        </a>
+        <a class="project-end-action" href="#project-top">
+          <span>
+            <small>navigation</small>
+            <strong>Back to top</strong>
+          </span>
+          <b aria-hidden="true">↑</b>
+        </a>
+      </div>
+
+      <nav class="project-return" aria-label="Project navigation">
+        <a href="/#work">← selected work</a>
+        <a href="/">homepage ↑</a>
+      </nav>
+    </section>
+  </main>
+
+  <Footer />
+</BaseLayout>

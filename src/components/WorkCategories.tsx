@@ -81,16 +81,6 @@ const categories: ReadonlyArray<{
         thumbnail: '/images/projects/prime-charge.webp',
         thumbnailAlt: 'Prime Charge brand identity thumbnail',
       },
-      {
-        title: 'RR Dhaba',
-        description: 'An early restaurant identity project covering the logo, colour palette, typography, banners and menu design.',
-        mark: 'RR',
-        plate: 'type',
-        discipline: 'identity · menu · banners',
-        action: 'case study to be added',
-        thumbnail: '/images/projects/rr-dhaba.webp',
-        thumbnailAlt: 'RR Dhaba restaurant identity thumbnail',
-      },
     ],
   },
   {
@@ -98,30 +88,48 @@ const categories: ReadonlyArray<{
     label: 'Logo Designing',
     meta: 'marks · symbols · visual signatures',
     summary: 'Distinctive logo ideas shaped into clear, memorable marks with the flexibility to work across every scale.',
-    projects: [],
+    projects: [
+      {
+        title: 'RR Dhaba',
+        description: 'A restaurant logo that turns mirrored initials, a domed silhouette, dining cutlery and botanical details into one memorable emblem.',
+        mark: 'RR',
+        plate: 'type',
+        discipline: 'restaurant · logo design',
+        action: 'view logo case study',
+        thumbnail: '/images/projects/rr-dhaba.webp',
+        thumbnailAlt: 'RR Dhaba restaurant logo with mirrored R forms, cutlery and leaves',
+        href: '/work/rr-dhaba',
+        status: 'logo design concept',
+      },
+      {
+        title: 'The Cleeds',
+        description: 'A minimal organic-seed logo that hides a seed bucket inside customised lettering, balancing playful character with calm credibility.',
+        mark: 'TC',
+        plate: 'type',
+        discipline: 'organic seeds · logo design',
+        action: 'view logo case study',
+        thumbnail: '/images/projects/the-cleeds.webp',
+        thumbnailAlt: 'The Cleeds organic seed company logo in dark and pale green',
+        href: '/work/the-cleeds',
+        status: 'logo design concept',
+      },
+    ],
   },
   {
     id: 'packaging',
     label: 'Packaging',
     meta: 'packs · labels · printed touchpoints',
     summary: 'Packaging that balances shelf presence, clear information and the character of the brand.',
-    projects: [
-      {
-        title: 'The Cleeds',
-        description: 'Logo development and packaging design for a seed brand, organising its range clearly while building a consistent shelf presence.',
-        mark: 'TC',
-        plate: 'type',
-        discipline: 'seed packaging · identity',
-        action: 'packaging case study to be added',
-      },
-    ],
+    projects: [],
   },
 ];
 
 export default function WorkCategories() {
   const [activeId, setActiveId] = useState<string | null>(null);
+  const [hoveredId, setHoveredId] = useState<string | null>(null);
   const reducedMotion = useReducedMotion();
   const railRefs = useRef<Record<string, HTMLDivElement | null>>({});
+  const rhythmRefs = useRef<Record<string, { last: number; timer: number }>>({});
 
   const toggleCategory = (id: string) => {
     setActiveId((current) => current === id ? null : id);
@@ -133,16 +141,36 @@ export default function WorkCategories() {
     rail.scrollBy({ left: rail.clientWidth * 0.72 * direction, behavior: reducedMotion ? 'auto' : 'smooth' });
   };
 
+  const moveRhythm = (id: string, rail: HTMLDivElement) => {
+    const rhythm = rhythmRefs.current[id] ?? { last: rail.scrollLeft, timer: 0 };
+    const distance = rail.scrollLeft - rhythm.last;
+    rhythm.last = rail.scrollLeft;
+    rail.style.setProperty('--rhythm-shift', `${Math.max(-26, Math.min(26, distance * .42))}px`);
+    rail.style.setProperty('--rhythm-counter-shift', `${Math.max(-18, Math.min(18, distance * -.23))}px`);
+    rail.classList.add('is-rhythm-moving');
+    window.clearTimeout(rhythm.timer);
+    rhythm.timer = window.setTimeout(() => {
+      rail.style.setProperty('--rhythm-shift', '0px');
+      rail.style.setProperty('--rhythm-counter-shift', '0px');
+      rail.classList.remove('is-rhythm-moving');
+    }, 130);
+    rhythmRefs.current[id] = rhythm;
+  };
+
   return (
     <div className="work-browser">
-      <motion.div className="work-categories" layout aria-label="Work categories">
+      <div className="work-principles" aria-label="Design principles demonstrated by the work browser">
+        <div><span>04 / similarity</span><p>hover or open a discipline to see a shared visual family</p></div>
+        <div><span>05 / rhythm + repetition</span><p>open an archive, then drag or scroll to change its cadence</p></div>
+      </div>
+      <motion.div className={`work-categories${hoveredId ? ' has-similarity-focus' : ''}`} layout aria-label="Work categories">
         {categories.map((category) => {
           const expanded = activeId === category.id;
 
           return (
             <Fragment key={category.id}>
               <motion.article
-                className={`work-category-shell${expanded ? ' is-active' : ''}`}
+                className={`work-category-shell${expanded ? ' is-active' : ''}${hoveredId === category.id ? ' is-similarity-focus' : ''}${hoveredId && hoveredId !== category.id ? ' is-similarity-muted' : ''}`}
                 id={`work-category-${category.id}`}
                 layout={!reducedMotion}
                 transition={{ duration: reducedMotion ? 0 : 0.7, ease: [0.22, 1, 0.36, 1] }}
@@ -153,6 +181,10 @@ export default function WorkCategories() {
                   aria-expanded={expanded}
                   aria-controls={`work-projects-${category.id}`}
                   onClick={() => toggleCategory(category.id)}
+                  onPointerEnter={() => setHoveredId(category.id)}
+                  onPointerLeave={() => setHoveredId(null)}
+                  onFocus={() => setHoveredId(category.id)}
+                  onBlur={() => setHoveredId(null)}
                 >
                   <span>{category.meta}</span>
                   <strong>{category.label}</strong>
@@ -178,7 +210,7 @@ export default function WorkCategories() {
 
                       {category.projects.length > 1 && (
                         <div className="work-project-controls">
-                          <span>project archive · drag or scroll sideways</span>
+                          <span>05 / rhythm · drag or scroll sideways</span>
                           <div>
                             <button type="button" aria-label={`View previous ${category.label} project`} onClick={() => moveRail(category.id, -1)}>←</button>
                             <button type="button" aria-label={`View next ${category.label} project`} onClick={() => moveRail(category.id, 1)}>→</button>
@@ -189,6 +221,7 @@ export default function WorkCategories() {
                       <div
                         className={`work-project-grid${category.projects.length === 1 ? ' has-one' : ''}`}
                         ref={(element) => { railRefs.current[category.id] = element; }}
+                        onScroll={(event) => moveRhythm(category.id, event.currentTarget)}
                         aria-label={`${category.label} projects`}
                       >
                         {category.projects.length > 0 ? category.projects.map((project) => (
@@ -236,9 +269,9 @@ export default function WorkCategories() {
                           </article>
                         )) : (
                           <div className="work-project-empty">
-                            <span>logo archive</span>
-                            <strong>LOGO SELECTION IN PROGRESS</strong>
-                            <p>Selected logo-design projects will be added as their presentations are prepared.</p>
+                            <span>{category.id === 'packaging' ? 'packaging archive' : 'project archive'}</span>
+                            <strong>{category.id === 'packaging' ? 'PACKAGING SELECTION IN PROGRESS' : 'SELECTION IN PROGRESS'}</strong>
+                            <p>{category.id === 'packaging' ? 'Selected packaging projects will be added as their presentations are prepared.' : 'Selected projects will be added as their presentations are prepared.'}</p>
                           </div>
                         )}
                       </div>

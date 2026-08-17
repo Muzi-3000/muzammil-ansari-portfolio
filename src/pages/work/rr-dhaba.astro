@@ -1,0 +1,223 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import InteractionLayer from '../../components/InteractionLayer';
+import '../../styles/project.css';
+
+const conceptNotes = [
+  {
+    number: '01',
+    title: 'Mirrored initials',
+    copy: 'Two opposing R forms create symmetry, recognition and the central structure of the mark.',
+  },
+  {
+    number: '02',
+    title: 'A royal dome',
+    copy: 'The upper curves meet in a Taj Mahal-inspired dome, translating the requested royal character into a single silhouette.',
+  },
+  {
+    number: '03',
+    title: 'Cutlery as pillars',
+    copy: 'A spoon and fork frame the emblem like architectural pillars while making the dining category immediately clear.',
+  },
+  {
+    number: '04',
+    title: 'Nature around the mark',
+    copy: 'A controlled botanical frame introduces the jungle cue without competing with the initials at the centre.',
+  },
+] as const;
+---
+
+<BaseLayout
+  title="RR Dhaba Logo Design | Muzammil Ansari"
+  description="A focused logo-design case study for RR Dhaba, combining mirrored initials, architectural cues, dining elements and a jungle-inspired frame."
+  socialImage="/images/projects/rr-dhaba.webp"
+  socialImageWidth={2400}
+  socialImageHeight={1500}
+>
+  <InteractionLayer client:load />
+  <Header />
+
+  <main id="main" class="project-page rr-project">
+    <section id="project-top" class="project-hero rr-hero page-gutter" aria-labelledby="project-title">
+      <div class="project-hero__meta" data-load>
+        <a href="/#work">← back to work</a>
+        <span>01 / logo designing</span>
+        <a href="#logo-concept">view concept ↓</a>
+      </div>
+
+      <h1 id="project-title">
+        <span data-load>RR</span>
+        <span data-load>DHABA</span>
+      </h1>
+
+      <div class="project-hero__intro" data-reveal>
+        <p>A restaurant logo built from mirrored initials, architectural rhythm and a deliberate touch of the wild.</p>
+        <p>The client wanted a royal, Arabian-influenced presence with a jungle character. The final emblem brings both ideas into one food-led mark.</p>
+      </div>
+    </section>
+
+    <section class="project-stage rr-stage page-gutter" aria-label="RR Dhaba logo presentation">
+      <div class="project-stage__label">
+        <span>restaurant logo / final emblem</span>
+        <span>RR Dhaba</span>
+      </div>
+
+      <figure class="rr-stage__visual" data-reveal>
+        <img src="/images/projects/rr-dhaba.webp" alt="Final RR Dhaba emblem on a dark geometric background" width="2400" height="1500" decoding="async" />
+      </figure>
+
+      <div class="project-stage__caption">
+        <span>royal structure / natural frame</span>
+        <p>A bold central monogram gives the restaurant a recognisable sign, while cutlery and leaves make its two requested worlds visible at a glance.</p>
+      </div>
+    </section>
+
+    <section class="project-brief page-gutter">
+      <div class="project-section-heading" data-reveal>
+        <span>01 / the brief</span>
+        <h2>Make royal dining feel rooted in nature.</h2>
+      </div>
+
+      <div class="project-brief__copy" data-reveal>
+        <p>RR Dhaba needed a distinctive restaurant logo with an ornate, Arabian-influenced mood and a visible connection to the jungle. The solution had to feel rich and thematic while still reading clearly as a food business.</p>
+      </div>
+    </section>
+
+    <dl class="project-facts page-gutter" data-reveal>
+      <div><dt>project type</dt><dd>Restaurant logo</dd></div>
+      <div><dt>role</dt><dd>Logo Designer</dd></div>
+      <div><dt>focus</dt><dd>Concept + visual mark</dd></div>
+    </dl>
+
+    <section class="project-direction rr-direction page-gutter">
+      <div class="project-direction__title" data-reveal>
+        <span>02 / design direction</span>
+        <h2>Architecture.<br />Appetite. Nature.</h2>
+      </div>
+
+      <div class="project-principles">
+        <article data-reveal>
+          <span>01</span>
+          <h3>Royal</h3>
+          <p>A domed outline, gold finish and high-contrast wordmark give the logo its ceremonial presence.</p>
+        </article>
+        <article data-reveal>
+          <span>02</span>
+          <h3>Edible</h3>
+          <p>Spoon, fork and plate cues keep the concept connected to dining rather than architecture alone.</p>
+        </article>
+        <article data-reveal>
+          <span>03</span>
+          <h3>Organic</h3>
+          <p>Layered leaves introduce the jungle theme and soften the geometry of the central monogram.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="logo-concept" class="rr-concept page-gutter" aria-labelledby="rr-concept-title">
+      <div class="project-section-heading" data-reveal>
+        <span>03 / logo concept</span>
+        <h2 id="rr-concept-title">Two letters become a place.</h2>
+      </div>
+
+      <figure class="rr-concept__figure" data-reveal>
+        <img src="/images/projects/rr-dhaba/04-concept.webp" alt="RR Dhaba logo concept compared with domed architecture and minaret-like pillars" width="2000" height="1125" loading="lazy" decoding="async" />
+        <figcaption><span>concept anatomy</span><span>mirrored R / dome / cutlery</span></figcaption>
+      </figure>
+
+      <div class="rr-concept__notes">
+        {conceptNotes.map((note) => (
+          <article data-reveal>
+            <span>{note.number}</span>
+            <h3>{note.title}</h3>
+            <p>{note.copy}</p>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <section class="rr-system page-gutter" aria-labelledby="rr-system-title">
+      <div class="project-section-heading" data-reveal>
+        <span>04 / supporting system</span>
+        <h2 id="rr-system-title">A small palette with a strong signal.</h2>
+      </div>
+
+      <div class="rr-palette" data-reveal aria-label="RR Dhaba logo colour palette">
+        <div style="--swatch: #000000; --swatch-ink: #ffffff"><span>Black</span><b>#000000</b></div>
+        <div style="--swatch: #f1dd89; --swatch-ink: #0c0c0c"><span>Royal gold</span><b>#F1DD89</b></div>
+        <div style="--swatch: #0c0c0c; --swatch-ink: #ffffff"><span>Charcoal</span><b>#0C0C0C</b></div>
+        <div style="--swatch: #ffffff; --swatch-ink: #0c0c0c"><span>White</span><b>#FFFFFF</b></div>
+      </div>
+
+      <div class="rr-system__gallery">
+        <figure data-reveal>
+          <img src="/images/projects/rr-dhaba/03-type.webp" alt="RR Dhaba wordmark typography shown in Bodoni FLF" width="2000" height="1125" loading="lazy" decoding="async" />
+          <figcaption><span>typographic voice</span><span>Bodoni FLF</span></figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="rr-lockups page-gutter" aria-labelledby="rr-lockups-title">
+      <div class="project-section-heading" data-reveal>
+        <span>05 / final lockups</span>
+        <h2 id="rr-lockups-title">One emblem. Two useful signatures.</h2>
+      </div>
+
+      <figure data-reveal>
+        <img src="/images/projects/rr-dhaba/01-lockups.webp" alt="RR Dhaba full emblem and horizontal wordmark lockups" width="2000" height="1125" loading="lazy" decoding="async" />
+        <figcaption><span>primary emblem</span><span>alternate wordmark</span></figcaption>
+      </figure>
+    </section>
+
+    <section class="rr-applications page-gutter" aria-labelledby="rr-applications-title">
+      <div class="project-section-heading" data-reveal>
+        <span>06 / applications</span>
+        <h2 id="rr-applications-title">The mark becomes part of the place.</h2>
+      </div>
+
+      <div class="rr-applications__grid">
+        <figure data-reveal>
+          <img src="/images/projects/rr-dhaba/05-menu-mockup.webp" alt="RR Dhaba logo applied to a premium black restaurant menu cover" width="1536" height="1024" loading="lazy" decoding="async" />
+          <figcaption><span>menu cover</span><span>black / gold application</span></figcaption>
+        </figure>
+        <figure data-reveal>
+          <img src="/images/projects/rr-dhaba/06-facade-mockup.webp" alt="RR Dhaba logo applied to exterior restaurant facade signage" width="1536" height="1024" loading="lazy" decoding="async" />
+          <figcaption><span>restaurant facade</span><span>dimensional signage</span></figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="project-status page-gutter">
+      <div data-reveal>
+        <span>07 / project focus</span>
+        <p>A focused logo story: the idea, its ingredients and the final mark.</p>
+      </div>
+
+      <div class="project-end-actions" data-reveal>
+        <a class="project-end-action" href="/#work">
+          <span>
+            <small>portfolio</small>
+            <strong>Selected work</strong>
+          </span>
+          <b aria-hidden="true">←</b>
+        </a>
+        <a class="project-end-action" href="#project-top">
+          <span>
+            <small>navigation</small>
+            <strong>Back to top</strong>
+          </span>
+          <b aria-hidden="true">↑</b>
+        </a>
+      </div>
+
+      <nav class="project-return" aria-label="Project navigation">
+        <a href="/#work">← selected work</a>
+        <a href="/">homepage ↑</a>
+      </nav>
+    </section>
+  </main>
+
+  <Footer />
+</BaseLayout>
