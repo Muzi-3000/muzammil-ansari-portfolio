@@ -162,6 +162,24 @@
 .twpayz-status .project-end-action:hover { color: var(--twp-navy); background: var(--twp-ice); }
 
 /* My Swanand app case study */
+.swanand-project {
+  --swanand-purple: #47256a;
+  --swanand-purple-dark: #24142f;
+  --swanand-lilac: #ece3f1;
+  --swanand-cream: #f4efcf;
+  --swanand-yellow: #f2cc19;
+  color: var(--swanand-purple-dark);
+  background: var(--swanand-cream);
+}
+.swanand-hero {
+  background:
+    radial-gradient(circle at 86% 29%, rgb(242 204 25 / 78%) 0 10%, transparent 29%),
+    radial-gradient(circle at 16% 78%, rgb(185 155 202 / 62%) 0 9%, transparent 28%),
+    linear-gradient(135deg, #faf6df 18%, var(--swanand-lilac) 100%);
+}
+.swanand-hero .project-hero__meta,
+.swanand-hero .project-hero__intro { border-color: var(--swanand-purple); }
+.swanand-hero .project-hero__intro p:last-child { color: #665a6c; }
 .project-hero.swanand-hero h1 span:first-child { white-space: nowrap; font-size: clamp(4.4rem, 9.5vw, 11rem); }
 .project-hero.swanand-hero h1 span:last-child { max-width: none; white-space: nowrap; text-align: right; font-size: clamp(3.8rem, 8.4vw, 9.8rem); line-height: .82; }
 .swanand-stage { background: #47256a; }
@@ -176,12 +194,46 @@
 .swanand-stage__phone--right { transform: translate(78%, 7%) rotate(5deg); }
 .swanand-stage .project-stage__caption { border-top-color: var(--paper); }
 
+.swanand-brief {
+  background:
+    linear-gradient(112deg, rgb(236 227 241 / 94%), rgb(250 246 223 / 92%) 58%, rgb(242 204 25 / 20%));
+}
+.swanand-facts { border-color: var(--swanand-purple); background: var(--swanand-yellow); }
+.swanand-facts div { border-color: var(--swanand-purple); }
+.swanand-facts dt { color: #6b4d21; }
+.swanand-direction { color: var(--swanand-cream); background: var(--swanand-purple); }
+.swanand-direction .project-principles { border-color: var(--swanand-yellow); }
+.swanand-direction .project-principles article { border-color: var(--swanand-yellow); }
+.swanand-direction .project-principles article > span { color: var(--swanand-yellow); }
+.swanand-direction .project-principles p { color: #e1d4e7; }
+.swanand-walkthrough {
+  background:
+    linear-gradient(180deg, #faf6df 0%, var(--swanand-lilac) 48%, #faf6df 100%);
+}
+.swanand-journey {
+  padding-inline: clamp(1rem, 2.4vw, 2.5rem);
+  border-color: var(--swanand-purple);
+}
+.swanand-journey:nth-child(odd) { background: rgb(236 227 241 / 72%); }
+.swanand-journey:nth-child(even) { background: rgb(244 239 207 / 88%); }
+.swanand-journey .project-chapter__copy > span { color: #79558c; }
+
 .swanand-screen-pair { min-height: clamp(44rem, 78vw, 78rem); display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(1rem, 5vw, 7rem); align-items: center; padding: clamp(2.5rem, 7vw, 7rem); overflow: hidden; border: 1px solid var(--ink); background: #ece3f1; opacity: 0; }
 .swanand-journey:nth-child(even) .swanand-screen-pair { background: #f4efcf; }
 .swanand-screen { width: min(100%, 25rem); margin: 0; justify-self: center; }
 .swanand-screen:nth-child(2) { transform: translateY(clamp(2rem, 6vw, 7rem)); }
 .swanand-screen img { width: 100%; height: auto; display: block; border: 1px solid var(--ink); border-radius: clamp(1rem, 1.8vw, 1.8rem); box-shadow: 0 1.5rem 3rem rgb(33 23 29 / 14%); background: #f7f1d8; }
 .swanand-screen figcaption { display: flex; justify-content: space-between; gap: 1rem; padding-top: .8rem; font: .58rem var(--font-text); text-transform: lowercase; }
+.swanand-status {
+  color: var(--swanand-cream);
+  border-color: var(--swanand-yellow);
+  background: var(--swanand-purple);
+}
+.swanand-status > .project-end-actions,
+.swanand-status .project-end-action:first-child,
+.swanand-status .project-return { border-color: var(--swanand-yellow); }
+.swanand-status .project-end-action small { color: #d3bbdc; }
+.swanand-status .project-end-action:hover { color: var(--swanand-purple-dark); background: var(--swanand-yellow); }
 
 /* VisionSpace Realty brand identity */
 .project-hero.visionspace-hero h1 span:first-child { white-space: nowrap; font-size: clamp(4rem, 10.3vw, 11.8rem); }
