@@ -236,13 +236,56 @@
 .swanand-status .project-end-action:hover { color: var(--swanand-purple-dark); background: var(--swanand-yellow); }
 
 /* VisionSpace Realty brand identity */
+.visionspace-project {
+  --visionspace-navy: #16263f;
+  --visionspace-blue: #6f8eaa;
+  --visionspace-mist: #e7e8ec;
+  --visionspace-white: #fbfbfc;
+  color: var(--visionspace-navy);
+  background: var(--visionspace-white);
+}
+.visionspace-hero {
+  background:
+    linear-gradient(90deg, transparent 0 68%, rgb(22 38 63 / 9%) 68% 68.08%, transparent 68.08%),
+    linear-gradient(0deg, transparent 0 71%, rgb(22 38 63 / 9%) 71% 71.08%, transparent 71.08%),
+    radial-gradient(circle at 82% 27%, rgb(111 142 170 / 24%) 0 10%, transparent 31%),
+    linear-gradient(135deg, var(--visionspace-white) 22%, var(--visionspace-mist) 100%);
+}
+.visionspace-hero .project-hero__meta,
+.visionspace-hero .project-hero__intro { border-color: var(--visionspace-navy); }
+.visionspace-hero .project-hero__intro p:last-child { color: #5e6878; }
 .project-hero.visionspace-hero h1 span:first-child { white-space: nowrap; font-size: clamp(4rem, 10.3vw, 11.8rem); }
 .project-hero.visionspace-hero h1 span:last-child { font-size: clamp(4rem, 9vw, 10rem); }
 .visionspace-stage { background: #16263f; }
 .visionspace-stage__cover { margin: clamp(2.5rem, 5vw, 5rem) 0 0; overflow: hidden; border: 1px solid #e7e8ec; opacity: 0; }
 .visionspace-stage__cover img { width: 100%; height: auto; display: block; }
 .visionspace-stage .project-stage__caption { border-top-color: #e7e8ec; }
-.visionspace-direction { background: #16263f; }
+.visionspace-brief {
+  background:
+    linear-gradient(112deg, rgb(231 232 236 / 94%), rgb(251 251 252 / 92%) 58%, rgb(111 142 170 / 22%));
+}
+.visionspace-facts { color: var(--visionspace-white); border-color: var(--visionspace-blue); background: var(--visionspace-navy); }
+.visionspace-facts div { border-color: var(--visionspace-blue); }
+.visionspace-facts dt { color: #aebdca; }
+.visionspace-direction { color: var(--visionspace-white); background: var(--visionspace-navy); }
+.visionspace-direction .project-principles { border-color: var(--visionspace-blue); }
+.visionspace-direction .project-principles article { border-color: var(--visionspace-blue); }
+.visionspace-direction .project-principles article > span { color: #aebdca; }
+.visionspace-direction .project-principles p { color: #d0d7df; }
+.visionspace-walkthrough {
+  background:
+    linear-gradient(180deg, var(--visionspace-white) 0%, var(--visionspace-mist) 50%, var(--visionspace-white) 100%);
+}
+.visionspace-chapter {
+  padding-inline: clamp(1rem, 2.4vw, 2.5rem);
+  border-color: var(--visionspace-navy);
+}
+.visionspace-chapter .project-chapter__copy {
+  grid-template-columns: minmax(4rem, .25fr) minmax(0, 1.1fr) minmax(20rem, .9fr);
+}
+.visionspace-chapter:nth-child(odd) { background: rgb(251 251 252 / 84%); }
+.visionspace-chapter:nth-child(even) { background: rgb(231 232 236 / 82%); }
+.visionspace-chapter .project-chapter__copy > span { color: #657e97; }
 .visionspace-gallery { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(1rem, 2vw, 2rem); padding: clamp(1rem, 2.5vw, 2.5rem); border: 1px solid var(--ink); background: #e7e8ec; opacity: 0; }
 .visionspace-gallery--1 { grid-template-columns: 1fr; padding: 0; }
 .visionspace-gallery--3 .visionspace-spread:first-child { grid-column: 1 / -1; }
@@ -252,6 +295,16 @@
 .visionspace-gallery--1 .visionspace-spread figcaption { padding: .8rem 0 0; }
 .visionspace-chapter:nth-child(5) .visionspace-gallery { background: #16263f; }
 .visionspace-chapter:nth-child(5) .visionspace-spread figcaption { color: #e7e8ec; }
+.visionspace-status {
+  color: var(--visionspace-white);
+  border-color: var(--visionspace-blue);
+  background: var(--visionspace-navy);
+}
+.visionspace-status > .project-end-actions,
+.visionspace-status .project-end-action:first-child,
+.visionspace-status .project-return { border-color: var(--visionspace-blue); }
+.visionspace-status .project-end-action small { color: #aebdca; }
+.visionspace-status .project-end-action:hover { color: var(--visionspace-navy); background: var(--visionspace-mist); }
 
 /* RR Dhaba logo case study */
 .project-hero.rr-hero h1 span:first-child { font-size: clamp(7rem, 18vw, 20rem); }
@@ -384,6 +437,7 @@
   .project-principles article:last-child { border-bottom: 0; }
   .project-chapter__copy { grid-template-columns: 4rem 1fr; }
   .twpayz-chapter .project-chapter__copy { grid-template-columns: 4rem 1fr; }
+  .visionspace-chapter .project-chapter__copy { grid-template-columns: 4rem 1fr; }
   .project-chapter__copy p { grid-column: 2; justify-self: start; }
 }
 
@@ -410,6 +464,7 @@
   .project-principles h3 { font-size: 2.4rem; }
   .project-chapter__copy { grid-template-columns: 2.5rem 1fr; gap: 1rem; }
   .twpayz-chapter .project-chapter__copy { grid-template-columns: 2.5rem 1fr; }
+  .visionspace-chapter .project-chapter__copy { grid-template-columns: 2.5rem 1fr; }
   .project-chapter__copy p { max-width: none; }
   .project-chapter:nth-child(n) .project-chapter__frame { width: 100%; margin-left: 0; }
   .project-status > div > p { max-width: none; font-size: clamp(2.55rem, 12vw, 4rem); }
