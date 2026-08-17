@@ -75,8 +75,8 @@ const chapters = [
   <InteractionLayer client:load />
   <Header />
 
-  <main id="main" class="project-page">
-    <section id="project-top" class="project-hero page-gutter" aria-labelledby="project-title">
+  <main id="main" class="project-page twpayz-page">
+    <section id="project-top" class="project-hero page-gutter twpayz-hero" aria-labelledby="project-title">
       <div class="project-hero__meta" data-load>
         <a href="/#work">← back to work</a>
         <span>01 / UI·UX</span>
@@ -94,7 +94,7 @@ const chapters = [
       </div>
     </section>
 
-    <section class="project-stage page-gutter" aria-label="TWPAYZ website presentation">
+    <section class="project-stage page-gutter twpayz-stage" aria-label="TWPAYZ website presentation">
       <div class="project-stage__label">
         <span>final direction / desktop</span>
         <span>concept view 01</span>
@@ -123,7 +123,7 @@ const chapters = [
       </div>
     </section>
 
-    <section class="project-brief page-gutter">
+    <section class="project-brief page-gutter twpayz-brief">
       <div class="project-section-heading" data-reveal>
         <span>01 / the brief</span>
         <h2>Make modern payments feel simple from the first click.</h2>
@@ -134,13 +134,13 @@ const chapters = [
       </div>
     </section>
 
-    <dl class="project-facts page-gutter" data-reveal>
+    <dl class="project-facts page-gutter twpayz-facts" data-reveal>
       <div><dt>project type</dt><dd>Fintech website</dd></div>
       <div><dt>role</dt><dd>UI/UX Designer</dd></div>
       <div><dt>tool</dt><dd>Figma</dd></div>
     </dl>
 
-    <section class="project-direction page-gutter">
+    <section class="project-direction page-gutter twpayz-direction">
       <div class="project-direction__title" data-reveal>
         <span>02 / design direction</span>
         <h2>Complex service.<br />Clear journey.</h2>
@@ -165,7 +165,7 @@ const chapters = [
       </div>
     </section>
 
-    <section class="project-walkthrough page-gutter" aria-labelledby="walkthrough-title">
+    <section class="project-walkthrough page-gutter twpayz-walkthrough" aria-labelledby="walkthrough-title">
       <div class="project-section-heading" data-reveal>
         <span>03 / website walkthrough</span>
         <h2 id="walkthrough-title">The complete idea, one section at a time.</h2>
@@ -173,7 +173,7 @@ const chapters = [
 
       <div class="project-chapters">
         {chapters.map((chapter) => (
-          <article class="project-chapter">
+          <article class="project-chapter twpayz-chapter">
             <div class="project-chapter__copy" data-reveal>
               <span>{chapter.number}</span>
               <h3>{chapter.title}</h3>
@@ -195,7 +195,7 @@ const chapters = [
       </div>
     </section>
 
-    <section class="project-status page-gutter">
+    <section class="project-status page-gutter twpayz-status">
       <div data-reveal>
         <span>04 / concept status</span>
         <p>Not every strong digital project needs to pretend it is live. This case study presents the thinking, visual direction and intended experience as the finished outcome.</p>

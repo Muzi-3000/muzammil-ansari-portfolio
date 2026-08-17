@@ -93,6 +93,71 @@
 .project-return { display: flex; justify-content: space-between; gap: 2rem; margin-top: clamp(3rem, 5vw, 5rem); padding: 1rem 0; border-block: 1px solid var(--ink); font: .65rem var(--font-text); text-transform: lowercase; }
 .project-title-mobile-break { display: none; }
 
+/* TWPAYZ fintech website case study */
+.twpayz-page {
+  --twp-navy: #191927;
+  --twp-blue: #4ca7dc;
+  --twp-ice: #deefff;
+  --twp-lilac: #ece9ff;
+  --twp-lime: #e8f8cb;
+  --twp-paper: #f7f8fb;
+  color: var(--twp-navy);
+  background: var(--twp-paper);
+}
+.twpayz-hero {
+  background:
+    radial-gradient(circle at 83% 25%, rgb(76 167 220 / 18%) 0 9%, transparent 28%),
+    radial-gradient(circle at 18% 78%, rgb(232 248 203 / 72%) 0 8%, transparent 27%),
+    linear-gradient(135deg, var(--twp-paper) 18%, var(--twp-lilac) 100%);
+}
+.twpayz-hero .project-hero__meta,
+.twpayz-hero .project-hero__intro { border-color: var(--twp-navy); }
+.twpayz-hero .project-hero__intro p:last-child { color: #5d6174; }
+.twpayz-stage { color: var(--twp-paper); background: var(--twp-navy); }
+.twpayz-stage .project-stage__label,
+.twpayz-stage .project-window,
+.twpayz-stage .project-window__bar,
+.twpayz-stage .project-window__controls i,
+.twpayz-stage .project-stage__caption { border-color: var(--twp-blue); }
+.twpayz-stage .project-window__bar { color: var(--twp-ice); }
+.twpayz-stage .project-window__viewport { background: var(--twp-ice); }
+.twpayz-brief {
+  background:
+    linear-gradient(112deg, rgb(222 239 255 / 90%), rgb(247 248 251 / 88%) 56%, rgb(236 233 255 / 88%));
+}
+.twpayz-facts { border-color: var(--twp-navy); background: var(--twp-ice); }
+.twpayz-facts div { border-color: var(--twp-navy); }
+.twpayz-facts dt { color: #49758f; }
+.twpayz-direction { color: var(--twp-paper); background: var(--twp-navy); }
+.twpayz-direction .project-principles { border-color: var(--twp-blue); }
+.twpayz-direction .project-principles article { border-color: var(--twp-blue); }
+.twpayz-direction .project-principles article > span { color: var(--twp-blue); }
+.twpayz-direction .project-principles p { color: #d7d9e7; }
+.twpayz-walkthrough {
+  background:
+    linear-gradient(180deg, var(--twp-paper) 0%, #f2f7fb 45%, var(--twp-paper) 100%);
+}
+.twpayz-chapter {
+  padding-inline: clamp(1rem, 2.4vw, 2.5rem);
+  border-color: var(--twp-navy);
+}
+.twpayz-chapter:nth-child(3n + 1) { background: var(--twp-ice); }
+.twpayz-chapter:nth-child(3n + 2) { background: var(--twp-lilac); }
+.twpayz-chapter:nth-child(3n) { background: var(--twp-lime); }
+.twpayz-chapter .project-chapter__copy > span { color: #49758f; }
+.twpayz-chapter .project-chapter__frame img,
+.twpayz-chapter .project-chapter__frame figcaption { border-color: var(--twp-navy); }
+.twpayz-status {
+  color: var(--twp-paper);
+  border-color: var(--twp-blue);
+  background: var(--twp-navy);
+}
+.twpayz-status > .project-end-actions,
+.twpayz-status .project-end-action:first-child,
+.twpayz-status .project-return { border-color: var(--twp-blue); }
+.twpayz-status .project-end-action small { color: #a7cce3; }
+.twpayz-status .project-end-action:hover { color: var(--twp-navy); background: var(--twp-ice); }
+
 /* My Swanand app case study */
 .project-hero.swanand-hero h1 span:first-child { white-space: nowrap; font-size: clamp(4.4rem, 9.5vw, 11rem); }
 .project-hero.swanand-hero h1 span:last-child { max-width: none; white-space: nowrap; text-align: right; font-size: clamp(3.8rem, 8.4vw, 9.8rem); line-height: .82; }
