@@ -23,8 +23,7 @@ export default function DesignPrinciples() {
     const contact = document.querySelector<HTMLElement>('[data-balance-section]');
     const contactMain = contact?.querySelector<HTMLElement>('.contact__main');
     const balanceRange = contact?.querySelector<HTMLInputElement>('[data-balance-range]');
-    const balanceReadout = contact?.querySelector<HTMLElement>('[data-balance-readout]');
-    if (contact && contactMain && balanceRange && balanceReadout) {
+    if (contact && contactMain && balanceRange) {
       let experienced = false;
       const setBalance = (value: number, markExperienced = true) => {
         const normalized = clamp(value, -100, 100) / 100;
@@ -37,11 +36,6 @@ export default function DesignPrinciples() {
         if (markExperienced) experienced = true;
         const balanced = Math.abs(normalized) < .1;
         contact.classList.toggle('is-balanced', experienced && balanced);
-        balanceReadout.textContent = !experienced
-          ? 'move to shift visual weight'
-          : balanced
-            ? 'equilibrium found'
-            : normalized < 0 ? 'weight leaning left' : 'weight leaning right';
       };
       const onRange = () => setBalance(Number(balanceRange.value));
       const onMove = (event: PointerEvent) => {

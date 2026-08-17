@@ -159,10 +159,6 @@ export default function WorkCategories() {
 
   return (
     <div className="work-browser">
-      <div className="work-principles" aria-label="Design principles demonstrated by the work browser">
-        <div><span>04 / similarity</span><p>hover or open a discipline to see a shared visual family</p></div>
-        <div><span>05 / rhythm + repetition</span><p>open an archive, then drag or scroll to change its cadence</p></div>
-      </div>
       <motion.div className={`work-categories${hoveredId ? ' has-similarity-focus' : ''}`} layout aria-label="Work categories">
         {categories.map((category) => {
           const expanded = activeId === category.id;
@@ -210,7 +206,7 @@ export default function WorkCategories() {
 
                       {category.projects.length > 1 && (
                         <div className="work-project-controls">
-                          <span>05 / rhythm · drag or scroll sideways</span>
+                          <span>project archive · drag or scroll sideways</span>
                           <div>
                             <button type="button" aria-label={`View previous ${category.label} project`} onClick={() => moveRail(category.id, -1)}>←</button>
                             <button type="button" aria-label={`View next ${category.label} project`} onClick={() => moveRail(category.id, 1)}>→</button>

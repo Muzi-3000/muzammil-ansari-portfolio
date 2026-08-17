@@ -231,11 +231,6 @@ export default function HierarchyHero() {
     <section ref={heroRef} className={`hero hero--hierarchy ${ordered ? 'is-ordered' : 'is-unordered'}`} aria-labelledby="hero-title">
       <div className="rule rule--double hero__start-rule" aria-hidden="true"><i></i><i></i></div>
 
-      <div className="hero__principle-label" aria-hidden="true">
-        <span data-hierarchy-float>design principle 01</span>
-        <span data-hierarchy-float>visual hierarchy</span>
-      </div>
-
       <div className="hero__title" id="hero-title">
         <div className="mask hero__name hero__name--first" data-hierarchy-float><h1 data-load>mohd</h1></div>
         <div className="mask hero__name hero__name--middle" data-hierarchy-float><h1 data-load>muzammil</h1></div>

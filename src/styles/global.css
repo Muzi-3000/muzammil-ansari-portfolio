@@ -82,7 +82,6 @@ button { color: inherit; font: inherit; }
 
 .hero { min-height: max(50rem, 100svh); display: flex; flex-direction: column; padding: clamp(7.5rem, 13vh, 10rem) var(--gutter) 2rem; }
 .hero--hierarchy { position: relative; isolation: isolate; }
-.hero__principle-label { display: flex; justify-content: space-between; gap: 2rem; padding-top: .75rem; color: var(--muted); font: .54rem/1.3 var(--font-text); letter-spacing: .03em; text-transform: lowercase; }
 .hero__meta { display: grid; grid-template-columns: minmax(12rem, 1fr) auto minmax(18rem, 2fr) auto minmax(15rem, 1fr); gap: clamp(1rem, 3vw, 3.5rem); align-items: center; padding: 1.6rem 0 1.5rem; font: .62rem/1.4 var(--font-text); text-transform: lowercase; opacity: 0; }
 .hero__meta p { margin: 0; }
 .hero__meta p:nth-of-type(2) { text-align: center; color: var(--muted); }
@@ -166,11 +165,6 @@ button { color: inherit; font: inherit; }
 .work__lead h2 { margin: 0; font: 560 clamp(3.3rem, 7.2vw, 7.8rem)/.93 var(--font-text); letter-spacing: -.065em; }
 .work__lead p { max-width: 30ch; margin: 0 0 .7rem; line-height: 1.45; }
 .work-browser { border-top: 1px solid var(--ink); }
-.work-principles { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); border-bottom: 1px solid var(--ink); font: .58rem/1.45 var(--font-text); }
-.work-principles > div { min-height: 5.2rem; display: flex; justify-content: space-between; gap: 2rem; align-items: center; padding: 1rem clamp(1rem, 2.2vw, 2.2rem); }
-.work-principles > div + div { border-left: 1px solid var(--ink); }
-.work-principles span { flex: 0 0 auto; color: var(--muted); }
-.work-principles p { max-width: 32ch; margin: 0; text-align: right; }
 .work-categories { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); grid-auto-flow: row dense; border-left: 1px solid var(--ink); }
 .work-category-shell { grid-column: span 1; scroll-margin-top: 6.5rem; overflow: hidden; border-right: 1px solid var(--ink); border-bottom: 1px solid var(--ink); transition: opacity .6s var(--ease), transform .65s var(--ease); }
 .work-categories.has-similarity-focus .work-category-shell.is-similarity-muted { opacity: .24; transform: scale(.985); }
@@ -230,8 +224,6 @@ button { color: inherit; font: inherit; }
 
 .mindset { --contrast-x: 38%; position: relative; min-height: clamp(44rem, 92svh, 72rem); display: flex; align-items: center; overflow: hidden; border-top: 1px solid var(--ink); background: linear-gradient(90deg, var(--ink) 0 var(--contrast-x), var(--paper) var(--contrast-x) 100%); }
 .mindset::after { content: ''; position: absolute; right: var(--gutter); bottom: 10%; left: var(--gutter); height: 1px; background: var(--paper); mix-blend-mode: difference; transform: scaleX(.35); transform-origin: left; transition: transform 1s var(--ease); }
-.mindset__principle { position: absolute; z-index: 2; top: 2rem; right: var(--gutter); left: var(--gutter); display: flex; justify-content: space-between; gap: 2rem; color: var(--paper); mix-blend-mode: difference; font: .58rem/1.4 var(--font-text); }
-.mindset__principle p { max-width: 34ch; margin: 0; text-align: right; }
 .mindset blockquote { position: relative; z-index: 1; width: 100%; margin: 0; color: var(--paper); mix-blend-mode: difference; opacity: 0; }
 .mindset blockquote > p { margin: 0; font: 490 clamp(4rem, 8.6vw, 9.7rem)/.92 var(--font-text); letter-spacing: -.07em; }
 .mindset blockquote > p span { display: block; transition: transform .9s var(--ease); }
@@ -249,7 +241,6 @@ button { color: inherit; font: inherit; }
 .contact { --balance: 0; position: relative; overflow: hidden; min-height: 100svh; padding: 0 var(--gutter) 2rem; color: var(--paper); background: var(--ink); display: flex; flex-direction: column; }
 .contact .section-bar { padding-top: 2rem; }
 .contact__balance-panel { padding: 1rem 0 0; }
-.contact__balance-panel p { display: flex; justify-content: space-between; gap: 2rem; margin: 0 0 .75rem; color: #a3a19b; font: .58rem/1.4 var(--font-text); }
 .contact__balance-panel input { width: 100%; height: 1.5rem; margin: 0; appearance: none; color: var(--paper); background: transparent; cursor: ew-resize; }
 .contact__balance-panel input::-webkit-slider-runnable-track { height: 1px; background: var(--paper); }
 .contact__balance-panel input::-webkit-slider-thumb { width: 1rem; height: 1rem; margin-top: -.48rem; appearance: none; border: 1px solid var(--paper); border-radius: 50%; background: var(--ink); transition: background .45s var(--ease), transform .45s var(--ease); }
@@ -442,7 +433,6 @@ button { color: inherit; font: inherit; }
   .hero__name--first h1 { font-size: clamp(2.6rem, 13vw, 5.2rem); line-height: .96; }
   .hero__name--middle h1 { font-size: clamp(2.9rem, 14.5vw, 5.8rem); line-height: .92; }
   .hero__name--last h1 { font-size: clamp(2.8rem, 14vw, 5.5rem); line-height: .95; }
-  .hero__principle-label { padding-top: .65rem; }
   .hero:not(.is-ordered) .hero__name h1 { font-size: clamp(1rem, 4.6vw, 1.35rem); }
   .hero__hierarchy-control { flex-direction: column; align-items: stretch; gap: .9rem; padding-block: 1rem; }
   .hero__hierarchy-toggle { width: 100%; min-width: 0; }
@@ -462,9 +452,6 @@ button { color: inherit; font: inherit; }
   .about__facts dd { font-size: .83rem; }
   .work__lead { grid-template-columns: 1fr; }
   .work__lead h2 { font-size: clamp(3.5rem, 15vw, 6rem); }
-  .work-principles { grid-template-columns: 1fr; }
-  .work-principles > div { min-height: 4.8rem; }
-  .work-principles > div + div { border-top: 1px solid var(--ink); border-left: 0; }
   .work-categories { grid-template-columns: 1fr; }
   .work-category-shell { grid-column: 1; }
   .work-category { min-height: 11rem; }
@@ -479,15 +466,11 @@ button { color: inherit; font: inherit; }
   .work-project-empty { min-height: 24rem; grid-template-columns: 1fr; grid-template-rows: auto 1fr auto; }
   .work-project-empty > p { justify-self: start; text-align: left; }
   .mindset { min-height: 78svh; }
-  .mindset__principle { top: 1.2rem; display: grid; gap: .35rem; }
-  .mindset__principle p { max-width: 27ch; text-align: left; }
   .mindset blockquote > p { font-size: clamp(3.5rem, 15vw, 5.6rem); line-height: .94; }
   .mindset blockquote > p span:last-child { padding-left: 0; }
   .mindset blockquote > cite { margin-left: 0; }
   .mindset > b { top: 11%; right: 1rem; font-size: 7rem; }
   .contact__title { font-size: clamp(4.4rem, 21vw, 7rem); }
-  .contact__balance-panel p { gap: 1rem; }
-  .contact__balance-panel p span:last-child { max-width: 18ch; text-align: right; }
   .contact__title span:last-child { padding-left: 0; }
   .contact__title::after { left: 0; }
   .contact__asterisk { top: 16%; right: -5%; }
