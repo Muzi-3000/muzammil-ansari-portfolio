@@ -387,18 +387,47 @@
 .rr-status .project-end-action:hover { color: var(--rr-black); background: var(--rr-gold); }
 
 /* The Cleeds logo case study */
+.cleeds-project {
+  --cleeds-green: #016531;
+  --cleeds-forest: #014d26;
+  --cleeds-growth: #e4ffb5;
+  --cleeds-white: #ffffff;
+  --cleeds-black: #0b120d;
+  color: var(--cleeds-black);
+  background: var(--cleeds-white);
+}
+.cleeds-hero {
+  background:
+    radial-gradient(ellipse at 84% 26%, rgb(1 101 49 / 19%) 0 11%, transparent 30%),
+    radial-gradient(ellipse at 16% 80%, rgb(228 255 181 / 88%) 0 12%, transparent 31%),
+    linear-gradient(135deg, var(--cleeds-white) 18%, #efffda 100%);
+}
+.cleeds-hero .project-hero__meta,
+.cleeds-hero .project-hero__intro { border-color: var(--cleeds-forest); }
+.cleeds-hero .project-hero__intro p:last-child { color: #536257; }
 .project-hero.cleeds-hero h1 span:first-child { font-size: clamp(5rem, 11vw, 12rem); }
 .project-hero.cleeds-hero h1 span:last-child { white-space: nowrap; font-size: clamp(4.7rem, 13vw, 15rem); }
 .cleeds-stage { color: #e4ffb5; background: #016531; }
 .cleeds-stage__visual { margin: clamp(2.5rem, 5vw, 5rem) 0 0; overflow: hidden; border: 1px solid #e4ffb5; opacity: 0; }
 .cleeds-stage__visual img { width: 100%; height: auto; display: block; }
 .cleeds-stage .project-stage__caption { border-top-color: #e4ffb5; }
+.cleeds-brief {
+  background:
+    linear-gradient(112deg, rgb(228 255 181 / 82%), rgb(255 255 255 / 94%) 58%, rgb(1 101 49 / 16%));
+}
+.cleeds-facts { color: var(--cleeds-growth); border-color: var(--cleeds-growth); background: var(--cleeds-forest); }
+.cleeds-facts div { border-color: var(--cleeds-growth); }
+.cleeds-facts dt { color: #b8d88f; }
 .cleeds-direction { color: #e4ffb5; background: #014d26; }
 .cleeds-direction .project-principles { border-top-color: #e4ffb5; }
 .cleeds-direction .project-principles article { border-right-color: #e4ffb5; }
 .cleeds-direction .project-principles article > span { color: #e4ffb5; }
 .cleeds-direction .project-principles p { color: #d6e6d9; }
 .cleeds-concept, .cleeds-system, .cleeds-variations, .cleeds-applications { padding-block: clamp(8rem, 14vw, 14rem); }
+.cleeds-concept {
+  background:
+    linear-gradient(180deg, var(--cleeds-white) 0%, #f0ffd7 100%);
+}
 .cleeds-concept > .project-section-heading, .cleeds-system > .project-section-heading, .cleeds-variations > .project-section-heading, .cleeds-applications > .project-section-heading { display: grid; grid-template-columns: 1fr 2fr; gap: clamp(3rem, 9vw, 10rem); }
 .cleeds-concept > .project-section-heading h2, .cleeds-system > .project-section-heading h2, .cleeds-variations > .project-section-heading h2, .cleeds-applications > .project-section-heading h2 { max-width: 11ch; margin-top: 0; }
 .cleeds-concept__figure { margin: clamp(5rem, 9vw, 9rem) 0 0; opacity: 0; }
@@ -420,13 +449,27 @@
 .cleeds-type > span { align-self: start; font: .6rem var(--font-text); text-transform: lowercase; }
 .cleeds-type strong { font: 400 clamp(3.5rem, 7vw, 8rem)/.78 'Tropic Jungle Local', var(--font-display); letter-spacing: -.025em; text-transform: uppercase; }
 .cleeds-type p { max-width: 35ch; margin: 0; color: #d6e6d9; font-size: .9rem; line-height: 1.55; }
-.cleeds-variations { border-bottom: 1px solid var(--ink); }
+.cleeds-variations {
+  border-bottom: 1px solid var(--cleeds-forest);
+  background:
+    linear-gradient(135deg, var(--cleeds-white) 0%, #f2ffdf 52%, rgb(1 101 49 / 13%) 100%);
+}
 .cleeds-variations__grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(1rem, 2vw, 2rem); margin-top: clamp(5rem, 9vw, 9rem); }
 .cleeds-variations__grid figure { margin: 0; opacity: 0; }
 .cleeds-variations__grid figure:nth-child(n + 3) img { aspect-ratio: 3 / 2; object-fit: cover; object-position: center 55%; }
 .cleeds-applications { background: #e4ffb5; }
 .cleeds-applications__grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(1rem, 2vw, 2rem); margin-top: clamp(5rem, 9vw, 9rem); }
 .cleeds-applications__grid figure { margin: 0; opacity: 0; }
+.cleeds-status {
+  color: var(--cleeds-growth);
+  border-color: var(--cleeds-growth);
+  background: var(--cleeds-forest);
+}
+.cleeds-status > .project-end-actions,
+.cleeds-status .project-end-action:first-child,
+.cleeds-status .project-return { border-color: var(--cleeds-growth); }
+.cleeds-status .project-end-action small { color: #b8d88f; }
+.cleeds-status .project-end-action:hover { color: var(--cleeds-forest); background: var(--cleeds-growth); }
 
 @media (max-width: 620px) {
   .project-title-mobile-break { display: block; }
