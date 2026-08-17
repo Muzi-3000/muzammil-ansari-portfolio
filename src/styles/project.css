@@ -307,18 +307,46 @@
 .visionspace-status .project-end-action:hover { color: var(--visionspace-navy); background: var(--visionspace-mist); }
 
 /* RR Dhaba logo case study */
+.rr-project {
+  --rr-black: #0c0c0c;
+  --rr-gold: #f1dd89;
+  --rr-ivory: #fffaf0;
+  --rr-green: #173d28;
+  color: var(--rr-black);
+  background: var(--rr-ivory);
+}
+.rr-hero {
+  background:
+    radial-gradient(circle at 84% 24%, rgb(23 61 40 / 20%) 0 9%, transparent 28%),
+    radial-gradient(circle at 17% 79%, rgb(241 221 137 / 84%) 0 10%, transparent 29%),
+    linear-gradient(135deg, var(--rr-ivory) 20%, #f7eab6 100%);
+}
+.rr-hero .project-hero__meta,
+.rr-hero .project-hero__intro { border-color: var(--rr-black); }
+.rr-hero .project-hero__intro p:last-child { color: #665f4a; }
 .project-hero.rr-hero h1 span:first-child { font-size: clamp(7rem, 18vw, 20rem); }
 .project-hero.rr-hero h1 span:last-child { font-size: clamp(4rem, 11.5vw, 13rem); }
 .rr-stage { color: #f1dd89; background: #0c0c0c; }
 .rr-stage__visual { margin: clamp(2.5rem, 5vw, 5rem) 0 0; overflow: hidden; border: 1px solid #f1dd89; opacity: 0; }
 .rr-stage__visual img { width: 100%; height: auto; display: block; }
 .rr-stage .project-stage__caption { border-top-color: #f1dd89; }
+.rr-brief {
+  background:
+    linear-gradient(112deg, rgb(255 250 240 / 96%), rgb(241 221 137 / 48%) 58%, rgb(23 61 40 / 12%));
+}
+.rr-facts { color: var(--rr-gold); border-color: var(--rr-gold); background: var(--rr-black); }
+.rr-facts div { border-color: var(--rr-gold); }
+.rr-facts dt { color: #c5b56f; }
 .rr-direction { color: #fff; background: #0c0c0c; }
 .rr-direction .project-principles { border-top-color: #f1dd89; }
 .rr-direction .project-principles article { border-right-color: #f1dd89; }
 .rr-direction .project-principles article > span { color: #f1dd89; }
 .rr-direction .project-principles p { color: #d8d5cd; }
 .rr-concept, .rr-system, .rr-lockups, .rr-applications { padding-block: clamp(8rem, 14vw, 14rem); }
+.rr-concept {
+  background:
+    linear-gradient(180deg, var(--rr-ivory) 0%, #f8edc4 100%);
+}
 .rr-concept > .project-section-heading, .rr-system > .project-section-heading, .rr-lockups > .project-section-heading, .rr-applications > .project-section-heading { display: grid; grid-template-columns: 1fr 2fr; gap: clamp(3rem, 9vw, 10rem); }
 .rr-concept > .project-section-heading h2, .rr-system > .project-section-heading h2, .rr-lockups > .project-section-heading h2, .rr-applications > .project-section-heading h2 { max-width: 11ch; margin-top: 0; }
 .rr-concept__figure { margin: clamp(5rem, 9vw, 9rem) 0 0; opacity: 0; }
@@ -339,11 +367,24 @@
 .rr-system__gallery { display: grid; grid-template-columns: 1fr; margin-top: clamp(3rem, 6vw, 6rem); }
 .rr-system__gallery figure, .rr-lockups figure { margin: 0; opacity: 0; }
 .rr-system__gallery figcaption { color: #f1dd89; }
-.rr-lockups { border-bottom: 1px solid var(--ink); }
+.rr-lockups { border-bottom: 1px solid var(--rr-black); background: var(--rr-gold); }
 .rr-lockups figure { margin-top: clamp(5rem, 9vw, 9rem); }
-.rr-applications { border-bottom: 1px solid var(--ink); }
+.rr-applications { color: var(--rr-ivory); border-bottom: 1px solid var(--rr-gold); background: var(--rr-green); }
+.rr-applications .project-section-heading > span,
+.rr-applications img,
+.rr-applications figcaption { border-color: var(--rr-gold); }
 .rr-applications__grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(1rem, 2vw, 2rem); margin-top: clamp(5rem, 9vw, 9rem); }
 .rr-applications__grid figure { margin: 0; opacity: 0; }
+.rr-status {
+  color: var(--rr-gold);
+  border-color: var(--rr-gold);
+  background: var(--rr-black);
+}
+.rr-status > .project-end-actions,
+.rr-status .project-end-action:first-child,
+.rr-status .project-return { border-color: var(--rr-gold); }
+.rr-status .project-end-action small { color: #c5b56f; }
+.rr-status .project-end-action:hover { color: var(--rr-black); background: var(--rr-gold); }
 
 /* The Cleeds logo case study */
 .project-hero.cleeds-hero h1 span:first-child { font-size: clamp(5rem, 11vw, 12rem); }
