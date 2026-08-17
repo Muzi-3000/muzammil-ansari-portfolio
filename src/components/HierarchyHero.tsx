@@ -34,9 +34,11 @@ export default function HierarchyHero() {
     }
 
     const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const coarsePointer = matchMedia('(pointer: coarse)').matches;
     let particles: Particle[] = [];
     let frame = 0;
     let resizeTimer = 0;
+    let layoutWidth = hero.clientWidth;
     let cursorX = -1000;
     let cursorY = -1000;
     let cursorActive = false;
@@ -46,7 +48,6 @@ export default function HierarchyHero() {
     const positionParticles = () => {
       cancelAnimationFrame(frame);
       frame = 0;
-      hero.classList.remove('is-floating');
       elements.forEach((element) => {
         element.style.setProperty('--float-x', '0px');
         element.style.setProperty('--float-y', '0px');
@@ -83,10 +84,10 @@ export default function HierarchyHero() {
           element,
           x,
           y,
-          vx: reduced ? 0 : randomBetween(-.28, .28),
-          vy: reduced ? 0 : randomBetween(-.24, .24),
+          vx: reduced ? 0 : randomBetween(coarsePointer ? -.14 : -.28, coarsePointer ? .14 : .28),
+          vy: reduced ? 0 : randomBetween(coarsePointer ? -.12 : -.24, coarsePointer ? .12 : .24),
           angle,
-          spin: reduced ? 0 : randomBetween(-.012, .012),
+          spin: reduced ? 0 : randomBetween(coarsePointer ? -.005 : -.012, coarsePointer ? .005 : .012),
           scaleX: 1,
           scaleY: 1,
         };
@@ -104,6 +105,9 @@ export default function HierarchyHero() {
     };
     const onPointerLeave = () => { cursorActive = false; };
     const onResize = () => {
+      const nextWidth = hero.clientWidth;
+      if (Math.abs(nextWidth - layoutWidth) < 10) return;
+      layoutWidth = nextWidth;
       clearTimeout(resizeTimer);
       resizeTimer = window.setTimeout(positionParticles, 160);
     };
@@ -114,17 +118,22 @@ export default function HierarchyHero() {
       const controlRect = hero.querySelector<HTMLElement>('.hero__hierarchy-control')?.getBoundingClientRect();
       const sidePadding = Math.max(18, Math.min(54, heroRect.width * .035));
       const fieldLeft = heroRect.left + sidePadding;
-      const fieldRight = heroRect.right - sidePadding;
+      const fieldRight = Math.max(fieldLeft + 100, heroRect.right - sidePadding);
       const fieldTop = (startRuleRect?.bottom ?? heroRect.top + 78) + 22;
-      const fieldBottom = (controlRect?.top ?? heroRect.bottom - 180) - 24;
+      const fieldBottom = Math.max(fieldTop + 72, (controlRect?.top ?? heroRect.bottom - 180) - 24);
       const repulsionRadius = Math.max(150, Math.min(260, hero.clientWidth * .19));
+      const currentRects = particles.map((particle) => particle.element.getBoundingClientRect());
+      const ambientX = coarsePointer ? .00125 : .0026;
+      const ambientY = coarsePointer ? .00105 : .0022;
+      const maximumSpeed = coarsePointer ? 2.6 : 7.2;
+      const bounce = coarsePointer ? .64 : .82;
 
       particles.forEach((particle, index) => {
-        particle.vx += Math.sin(time * .00042 + index * 1.7) * .0026;
-        particle.vy += Math.cos(time * .00036 + index * 1.35) * .0022;
+        particle.vx += Math.sin(time * .00042 + index * 1.7) * ambientX;
+        particle.vy += Math.cos(time * .00036 + index * 1.35) * ambientY;
         let targetScaleX = 1;
         let targetScaleY = 1;
-        const currentRect = particle.element.getBoundingClientRect();
+        const currentRect = currentRects[index];
 
         if (cursorActive) {
           const centreX = currentRect.left + currentRect.width / 2;
@@ -158,11 +167,13 @@ export default function HierarchyHero() {
         particle.scaleY += (targetScaleY - particle.scaleY) * .22;
 
         const speed = Math.hypot(particle.vx, particle.vy);
-        if (speed > 7.2) {
-          particle.vx = particle.vx / speed * 7.2;
-          particle.vy = particle.vy / speed * 7.2;
+        if (speed > maximumSpeed) {
+          particle.vx = particle.vx / speed * maximumSpeed;
+          particle.vy = particle.vy / speed * maximumSpeed;
         }
 
+        const previousX = particle.x;
+        const previousY = particle.y;
         particle.x += particle.vx;
         particle.y += particle.vy;
         particle.angle += particle.spin;
@@ -170,38 +181,42 @@ export default function HierarchyHero() {
         particle.vy *= .978;
         particle.spin *= .975;
 
+        const movedLeft = currentRect.left + particle.x - previousX;
+        const movedRight = currentRect.right + particle.x - previousX;
+        const movedTop = currentRect.top + particle.y - previousY;
+        const movedBottom = currentRect.bottom + particle.y - previousY;
+        const availableWidth = fieldRight - fieldLeft;
+
+        if (currentRect.width >= availableWidth) {
+          const centredLeft = fieldLeft + (availableWidth - currentRect.width) / 2;
+          particle.x += centredLeft - movedLeft;
+          particle.vx *= .72;
+        } else if (movedLeft < fieldLeft) {
+          particle.x += fieldLeft - movedLeft;
+          particle.vx = Math.abs(particle.vx) * bounce;
+          particle.scaleX = coarsePointer ? 1.055 : 1.08;
+          particle.scaleY = coarsePointer ? .965 : .94;
+        } else if (movedRight > fieldRight) {
+          particle.x -= movedRight - fieldRight;
+          particle.vx = -Math.abs(particle.vx) * bounce;
+          particle.scaleX = coarsePointer ? 1.055 : 1.08;
+          particle.scaleY = coarsePointer ? .965 : .94;
+        }
+        if (movedTop < fieldTop) {
+          particle.y += fieldTop - movedTop;
+          particle.vy = Math.abs(particle.vy) * bounce;
+          particle.scaleX = coarsePointer ? .97 : .95;
+          particle.scaleY = coarsePointer ? 1.055 : 1.08;
+        } else if (movedBottom > fieldBottom) {
+          particle.y -= movedBottom - fieldBottom;
+          particle.vy = -Math.abs(particle.vy) * bounce;
+          particle.scaleX = coarsePointer ? .97 : .95;
+          particle.scaleY = coarsePointer ? 1.055 : 1.08;
+        }
+
         particle.element.style.setProperty('--float-x', `${particle.x}px`);
         particle.element.style.setProperty('--float-y', `${particle.y}px`);
         particle.element.style.setProperty('--float-r', `${particle.angle}deg`);
-        particle.element.style.setProperty('--float-sx', `${particle.scaleX}`);
-        particle.element.style.setProperty('--float-sy', `${particle.scaleY}`);
-
-        const movedRect = particle.element.getBoundingClientRect();
-        if (movedRect.left < fieldLeft) {
-          particle.x += fieldLeft - movedRect.left;
-          particle.vx = Math.abs(particle.vx) * .82;
-          particle.scaleX = 1.08;
-          particle.scaleY = .94;
-        } else if (movedRect.right > fieldRight) {
-          particle.x -= movedRect.right - fieldRight;
-          particle.vx = -Math.abs(particle.vx) * .82;
-          particle.scaleX = 1.08;
-          particle.scaleY = .94;
-        }
-        if (movedRect.top < fieldTop) {
-          particle.y += fieldTop - movedRect.top;
-          particle.vy = Math.abs(particle.vy) * .82;
-          particle.scaleX = .95;
-          particle.scaleY = 1.08;
-        } else if (movedRect.bottom > fieldBottom) {
-          particle.y -= movedRect.bottom - fieldBottom;
-          particle.vy = -Math.abs(particle.vy) * .82;
-          particle.scaleX = .95;
-          particle.scaleY = 1.08;
-        }
-
-        particle.element.style.setProperty('--float-x', `${particle.x}px`);
-        particle.element.style.setProperty('--float-y', `${particle.y}px`);
         particle.element.style.setProperty('--float-sx', `${particle.scaleX}`);
         particle.element.style.setProperty('--float-sy', `${particle.scaleY}`);
       });
